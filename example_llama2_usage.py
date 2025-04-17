@@ -7,7 +7,7 @@ to interactively manage the key-value cache during step-by-step inference.
 import torch
 from transformers import LlamaForCausalLM, LlamaTokenizer
 
-from kv_cache_manager import KVCacheManager, WindowStrategy, NoOpStrategy
+from kv_cache_manager import KVCacheManager, WindowStrategy, NoOpStrategy, unpack_kv, pack_kv
 
 def main():
     # Model identifier for Llama 2 7B (base)
@@ -40,9 +40,12 @@ def main():
     # First forward pass: build initial cache
     with torch.no_grad():
         outputs = model(**inputs, use_cache=True)
-    past = cache_manager.update(outputs.past_key_values)
+    # unpack to list of (key, value), apply eviction, then repack for model
+    past_list = unpack_kv(outputs.past_key_values)
+    past_list = cache_manager.update(past_list)
+    past = pack_kv(past_list)
     print(f"After prompt '{prompt}':")
-    for i, (k, _) in enumerate(past):
+    for i, (k, _) in enumerate(past_list):
         print(f" Layer {i}: seq_len={k.size(-2)}")
 
     # Continue generation token by token
@@ -55,10 +58,13 @@ def main():
         input_token = token_id.unsqueeze(0).unsqueeze(0).to(device)
         with torch.no_grad():
             outputs = model(input_ids=input_token, past_key_values=past, use_cache=True)
-        past = cache_manager.update(outputs.past_key_values)
+        # unpack, evict, repack
+        past_list = unpack_kv(outputs.past_key_values)
+        past_list = cache_manager.update(past_list)
+        past = pack_kv(past_list)
         generated_ids = torch.cat([generated_ids, input_token], dim=-1)
         decoded = tokenizer.decode(token_id.item(), skip_special_tokens=True)
-        seq_len = past[0][0].size(-2)
+        seq_len = past_list[0][0].size(-2)
         print(f"Generated '{decoded}' | new seq_len per layer: {seq_len}")
 
     # Final output

@@ -45,6 +45,8 @@ from kv_cache_manager import (
     StridedStrategy,
     BlockAverageStrategy,
     AttentionScoreStrategy,
+    unpack_kv,
+    pack_kv,
 )
 
 def evaluate_strategy(
@@ -76,7 +78,10 @@ def evaluate_strategy(
         # initial build cache
         with torch.no_grad():
             out = model(prefix_ids.unsqueeze(0).to(device), use_cache=True)
-        past = cache_mgr.update(out.past_key_values)
+        # unpack to list of (key, value), evict, then repack for model
+        past_list = unpack_kv(out.past_key_values)
+        past_list = cache_mgr.update(past_list)
+        past = pack_kv(past_list)
 
         # token-by-token generation/prediction
         for t in target_ids:
@@ -89,10 +94,12 @@ def evaluate_strategy(
             # nll of true next token
             log_probs = torch.log_softmax(logits, dim=-1)
             nll = -log_probs[t].item()
-            # update cache
-            past = cache_mgr.update(out.past_key_values)
+            # unpack, evict, repack cache
+            past_list = unpack_kv(out.past_key_values)
+            past_list = cache_mgr.update(past_list)
+            past = pack_kv(past_list)
             # count KV elements
-            kv_count = sum(k.numel() + v.numel() for k, v in past)
+            kv_count = sum(k.numel() + v.numel() for k, v in past_list)
 
             total_tokens += 1
             total_time += elapsed

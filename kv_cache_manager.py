@@ -10,9 +10,49 @@ from abc import ABC, abstractmethod
 from typing import List, Optional, Tuple
 
 import torch
+# Attempt to import Llama Cache type (new HF API)
+try:
+    # LlamaCache is a NamedTuple/dataclass for per-layer KV cache
+    from transformers.models.llama.modeling_llama import Cache as LlamaCache
+except ImportError:
+    LlamaCache = None
 
 # Define a type alias for a single layer's key/value pair
 KeyValue = Tuple[torch.Tensor, torch.Tensor]
+
+def unpack_kv(past_kvs) -> List[KeyValue]:  # noqa
+    """
+    Convert model past_key_values to a list of (key, value) tuples.
+    Supports both legacy List[Tuple] and new LlamaCache API.
+    """
+    # new HF API: tuple of LlamaCache objects
+    if LlamaCache is not None and isinstance(past_kvs, (list, tuple)) and past_kvs:
+        first = past_kvs[0]
+        if isinstance(first, LlamaCache):
+            # dataclass/NamedTuple fields in order
+            field_names = list(getattr(first, '__annotations__', {}).keys())
+            # expect two fields: key and value (or similar)
+            if len(field_names) >= 2:
+                k_name, v_name = field_names[0], field_names[1]
+                return [(getattr(layer, k_name), getattr(layer, v_name)) for layer in past_kvs]
+    # assume legacy API: a list or tuple of (key, value)
+    return list(past_kvs)
+
+def pack_kv(kv_list: List[KeyValue]):  # noqa
+    """
+    Convert a list of (key, value) tuples to model past_key_values API.
+    Returns either a tuple of LlamaCache objects (new HF API)
+    or the original list (legacy).
+    """
+    if LlamaCache is not None:
+        # use field names from annotation to build Cache
+        field_names = list(getattr(LlamaCache, '__annotations__', {}).keys())
+        if len(field_names) >= 2:
+            k_name, v_name = field_names[0], field_names[1]
+            # build a tuple of Cache objects
+            return tuple(LlamaCache(**{k_name: k, v_name: v}) for k, v in kv_list)
+    # legacy: return list or tuple
+    return type(kv_list)(kv_list)
 
 class EvictionStrategy(ABC):
     """
