@@ -1,0 +1,67 @@
+[
+  {
+    "strategy": "bottom_50pct",
+    "responses": [
+      {
+        "question_id": 94,
+        "category": "roleplay",
+        "prompt": "<s>[INST] Please take on the role of a relationship coach. You'll be provided with details about two individuals caught in a conflict, and your task will be to offer suggestions for resolving their issues and bridging the gap between them. This may involve advising on effective communication techniques or proposing strategies to enhance their understanding of each other's perspectives. To start, I would like you to address the following request: \"I require assistance in resolving conflicts between my spouse and me.\" [/INST]",
+        "response": " O externasagnagn.\n \u0441\u0435\u0440\u043f\u043d\u044f 2\u04098O.\nOur goalO\u0409 nobody is going\n\u040b nobody \n\n nobody. \n\n   * @\u0409\u0409\\\\\n\n\n\n  everybody: \n\nobjections to\n\n sierp 1\u0409\\\\tout-f\u0409\u0409 nobodyOur\n\n\n\nPAVPAPAPA\n\n\n  * The\n\nMSNPA\u0409O\n\n\n\n\n   * @\u0409\u0409 everybody",
+        "metrics": {
+          "input_tokens": 111,
+          "output_tokens": 112,
+          "total_tokens_processed": 223,
+          "total_time_s": 3.9937877655029297,
+          "avg_token_time_s": 0.03435143402644566,
+          "tokens_per_second": 28.043553282280154,
+          "avg_kv_cache_size_mb": 1.4642857142857142,
+          "avg_kept_ratio": 0.5985401459854014,
+          "current_memory_mb": 4119.1298828125,
+          "peak_memory_mb": 4160.1552734375,
+          "raw_metrics_summary": {
+            "num_steps": 112,
+            "min_kv_cache_mb": 1.0,
+            "max_kv_cache_mb": 28.0,
+            "min_kept_ratio": 0.018018018018018018,
+            "max_kept_ratio": 0.5045045045045045
+          }
+        }
+      },
+      {
+        "question_id": 150,
+        "category": "stem",
+        "prompt": "<s>[INST] How have the Alps and Rhine River influenced settlement and agriculture in Western Europe? List three impacts. [/INST]",
+        "response": " Western Europe\u0409\u0409 \u0444\u0435\u0432 20\u04092\n\n\n\n\n   * @\u0409\u0409 everybody",
+        "metrics": {
+          "input_tokens": 32,
+          "output_tokens": 24,
+          "total_tokens_processed": 56,
+          "total_time_s": 0.8555543422698975,
+          "avg_token_time_s": 0.0343593955039978,
+          "tokens_per_second": 28.051987833203984,
+          "avg_kv_cache_size_mb": 1.5208333333333333,
+          "avg_kept_ratio": 0.5793650793650793,
+          "current_memory_mb": 4119.1259765625,
+          "peak_memory_mb": 4130.53515625,
+          "raw_metrics_summary": {
+            "num_steps": 24,
+            "min_kv_cache_mb": 1.0,
+            "max_kv_cache_mb": 8.0,
+            "min_kept_ratio": 0.0625,
+            "max_kept_ratio": 0.5
+          }
+        }
+      }
+    ],
+    "aggregated_metrics": {
+      "avg_total_time_per_prompt_s": 2.4246710538864136,
+      "avg_peak_memory_per_prompt_mb": 4145.34521484375,
+      "avg_token_time_s": 0.034355414765221734,
+      "avg_kv_cache_size_mb": 1.4925595238095237,
+      "avg_kept_ratio": 0.5889526126752404,
+      "overall_tokens_per_second": 28.045041363860623,
+      "success_rate": 1.0,
+      "avg_output_tokens": 68.0
+    }
+  }
+]

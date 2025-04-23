@@ -1,0 +1,67 @@
+[
+  {
+    "strategy": "block_avg_size_8",
+    "responses": [
+      {
+        "question_id": 84,
+        "category": "writing",
+        "prompt": "<s>[INST] Write a persuasive email to convince your introverted friend, who dislikes public speaking, to volunteer as a guest speaker at a local event. Use compelling arguments and address potential objections. Please be concise. [/INST]",
+        "response": "\u0409ev, 100       \ufffd everybody everybody everybody everybody everybody everybody\n\n\n",
+        "metrics": {
+          "input_tokens": 58,
+          "output_tokens": 27,
+          "total_tokens_processed": 85,
+          "total_time_s": 0.9608163833618164,
+          "avg_token_time_s": 0.03442266252305773,
+          "tokens_per_second": 28.10110284082506,
+          "avg_kv_cache_size_mb": 2.462962962962963,
+          "avg_kept_ratio": 0.6303317535545023,
+          "current_memory_mb": 4119.283203125,
+          "peak_memory_mb": 4134.52880859375,
+          "raw_metrics_summary": {
+            "num_steps": 27,
+            "min_kv_cache_mb": 1.0,
+            "max_kv_cache_mb": 4.0,
+            "min_kept_ratio": 0.034482758620689655,
+            "max_kept_ratio": 0.13793103448275862
+          }
+        }
+      },
+      {
+        "question_id": 152,
+        "category": "humanities",
+        "prompt": "<s>[INST] How do the stages of life shape our understanding of time and mortality? [/INST]",
+        "response": "------\n\n\n\n\n\n\n\n\n\n\n\n\n\n Hinweis: Please note that the `COOOOOO\u0409\u0409\u0409\u0409\u0409\u0409\u0409OOOOOOOOOOOOOOOOOOOOOOOO everybody! \ufffd................O!O!O!\u0409\u0409\u0409\u0409\u0409\u0409\u0409OOOOOOOOOOOOOOOOOOOOOOOO everybody! \ufffd................O-O-O--\u0409\u0409\u0409\u0409\u0409.\n\nThe first letter of each of of of ofOOOOOOOOO\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n everybody knows that the best way to to \n\n nobody nobody nobody\n\n\n",
+        "metrics": {
+          "input_tokens": 24,
+          "output_tokens": 179,
+          "total_tokens_processed": 203,
+          "total_time_s": 6.249361038208008,
+          "avg_token_time_s": 0.034159484522302726,
+          "tokens_per_second": 28.642928277884856,
+          "avg_kv_cache_size_mb": 2.494413407821229,
+          "avg_kept_ratio": 0.820018365472911,
+          "current_memory_mb": 4119.28515625,
+          "peak_memory_mb": 4125.22265625,
+          "raw_metrics_summary": {
+            "num_steps": 179,
+            "min_kv_cache_mb": 1.0,
+            "max_kv_cache_mb": 4.0,
+            "min_kept_ratio": 0.08333333333333333,
+            "max_kept_ratio": 0.3333333333333333
+          }
+        }
+      }
+    ],
+    "aggregated_metrics": {
+      "avg_total_time_per_prompt_s": 3.605088710784912,
+      "avg_peak_memory_per_prompt_mb": 4129.875732421875,
+      "avg_token_time_s": 0.034291073522680224,
+      "avg_kv_cache_size_mb": 2.478688185392096,
+      "avg_kept_ratio": 0.7251750595137066,
+      "overall_tokens_per_second": 28.57072551137708,
+      "success_rate": 1.0,
+      "avg_output_tokens": 103.0
+    }
+  }
+]

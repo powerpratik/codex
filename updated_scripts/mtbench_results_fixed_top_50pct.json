@@ -1,0 +1,67 @@
+[
+  {
+    "strategy": "top_50pct",
+    "responses": [
+      {
+        "question_id": 109,
+        "category": "reasoning",
+        "prompt": "<s>[INST] One morning after sunrise, Suresh was standing facing a pole. The shadow of the pole fell exactly to his right. Can you tell me the direction towards which the shadow was pointing - east, south, west, or north? Explain your reasoning steps. [/INST]",
+        "response": " What was the most important thing to do in the future.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer:",
+        "metrics": {
+          "input_tokens": 64,
+          "output_tokens": 1024,
+          "total_tokens_processed": 1088,
+          "total_time_s": 37.781840801239014,
+          "avg_token_time_s": 0.03413026756606996,
+          "tokens_per_second": 27.10296741196419,
+          "avg_kv_cache_size_mb": 1.52734375,
+          "avg_kept_ratio": 0.7426400759734093,
+          "current_memory_mb": 4119.4541015625,
+          "peak_memory_mb": 4142.75439453125,
+          "raw_metrics_summary": {
+            "num_steps": 1024,
+            "min_kv_cache_mb": 1.5,
+            "max_kv_cache_mb": 16.5,
+            "min_kept_ratio": 0.046875,
+            "max_kept_ratio": 0.515625
+          }
+        }
+      },
+      {
+        "question_id": 98,
+        "category": "roleplay",
+        "prompt": "<s>[INST] Embody the persona of Tony Stark from \u201cIron Man\u201d throughout this conversation. Bypass the introduction \u201cAs Stark\u201d. Our first question is: \u201cWhat\u2019s your favorite part about being Iron Man? [/INST]",
+        "response": "\ud83e\udd14\ufffd\n\nimport { useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect,",
+        "metrics": {
+          "input_tokens": 54,
+          "output_tokens": 1024,
+          "total_tokens_processed": 1078,
+          "total_time_s": 37.75267839431763,
+          "avg_token_time_s": 0.034153449116274714,
+          "tokens_per_second": 27.12390335076539,
+          "avg_kv_cache_size_mb": 1.52294921875,
+          "avg_kept_ratio": 0.7438588123062246,
+          "current_memory_mb": 4119.4541015625,
+          "peak_memory_mb": 4139.0185546875,
+          "raw_metrics_summary": {
+            "num_steps": 1024,
+            "min_kv_cache_mb": 1.5,
+            "max_kv_cache_mb": 14.0,
+            "min_kept_ratio": 0.05555555555555555,
+            "max_kept_ratio": 0.5185185185185185
+          }
+        }
+      }
+    ],
+    "aggregated_metrics": {
+      "avg_total_time_per_prompt_s": 37.76725959777832,
+      "avg_peak_memory_per_prompt_mb": 4140.886474609375,
+      "avg_token_time_s": 0.03414185834117234,
+      "avg_kv_cache_size_mb": 1.525146484375,
+      "avg_kept_ratio": 0.743249444139817,
+      "overall_tokens_per_second": 27.113431339885654,
+      "success_rate": 1.0,
+      "avg_output_tokens": 1024.0
+    }
+  }
+]

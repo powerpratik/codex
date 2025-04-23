@@ -95,260 +95,6 @@ class NoOpStrategy(EvictionStrategy):
         seq_len = past_kvs[0][0].size(-2)
         return past_kvs, seq_len, seq_len
 
-class WindowStrategy(EvictionStrategy):
-    """
-    Eviction strategy that retains only the most recent `max_length` tokens
-    in the cache for each layer.
-    """
-    def __init__(self, max_length: int):
-        if max_length <= 0:
-             raise ValueError("max_length must be positive")
-        self.max_length = max_length
-
-    def evict(self, past_kvs: List[KeyValue]) -> Tuple[List[KeyValue], int, int]:
-        if not past_kvs:
-             return [], 0, 0
-
-        new_past: List[KeyValue] = []
-        # Get original sequence length from the first layer (assume all layers have same length)
-        seq_len = past_kvs[0][0].size(-2)
-        kept_len = seq_len # Default if no pruning happens
-
-        for key, value in past_kvs:
-            # key, value shape: (batch_size, num_heads, seq_len, head_dim)
-            current_seq_len = key.size(-2)
-            if current_seq_len > self.max_length:
-                # keep only the last `max_length` positions
-                keep_indices = torch.arange(current_seq_len - self.max_length, current_seq_len, device=key.device)
-                key = torch.index_select(key, -2, keep_indices)
-                value = torch.index_select(value, -2, keep_indices)
-                kept_len = self.max_length # Update kept_len
-            new_past.append((key, value))
-
-        return new_past, seq_len, kept_len
-
-
-# --- New Ratio-Based Strategies ---
-
-class TopRatioStrategy(EvictionStrategy):
-    """
-    Keeps the first N tokens based on a ratio, plus the most recent token.
-    """
-    def __init__(self, pruning_ratio: float):
-        if not 0.0 <= pruning_ratio <= 1.0:
-            raise ValueError("pruning_ratio must be between 0.0 and 1.0")
-        self.pruning_ratio = pruning_ratio
-
-    def evict(self, past_kvs: List[KeyValue]) -> Tuple[List[KeyValue], int, int]:
-        if not past_kvs:
-            return [], 0, 0
-
-        new_past: List[KeyValue] = []
-        seq_len = past_kvs[0][0].size(-2)
-
-        if seq_len <= 1: # Cannot prune if only one token
-             return past_kvs, seq_len, seq_len
-
-        # Calculate how many tokens to keep from the beginning (excluding the last one)
-        # Ensure at least one token is kept if ratio > 0, otherwise keep only the last.
-        num_to_keep_from_past = math.ceil((seq_len - 1) * self.pruning_ratio)
-        num_to_keep_total = num_to_keep_from_past + 1 # Add the last token
-
-        if num_to_keep_total >= seq_len: # No pruning needed if keeping all or more
-             return past_kvs, seq_len, seq_len
-
-        kept_len = num_to_keep_total
-        first_indices = torch.arange(num_to_keep_from_past, device=past_kvs[0][0].device)
-        last_index = torch.tensor([seq_len - 1], device=past_kvs[0][0].device)
-        indices_to_keep = torch.cat([first_indices, last_index])
-
-        for key, value in past_kvs:
-            pruned_key = torch.index_select(key, -2, indices_to_keep)
-            pruned_value = torch.index_select(value, -2, indices_to_keep)
-            new_past.append((pruned_key, pruned_value))
-
-        return new_past, seq_len, kept_len
-
-
-class BottomRatioStrategy(EvictionStrategy):
-    """
-    Keeps the last N tokens based on a ratio, plus the most recent token
-    (which is inherently included in the 'last N'). Equivalent to WindowStrategy
-    if window size is calculated from ratio.
-    """
-    def __init__(self, pruning_ratio: float):
-        if not 0.0 <= pruning_ratio <= 1.0:
-            raise ValueError("pruning_ratio must be between 0.0 and 1.0")
-        self.pruning_ratio = pruning_ratio
-
-    def evict(self, past_kvs: List[KeyValue]) -> Tuple[List[KeyValue], int, int]:
-        if not past_kvs:
-            return [], 0, 0
-
-        new_past: List[KeyValue] = []
-        seq_len = past_kvs[0][0].size(-2)
-
-        if seq_len <= 1: # Cannot prune if only one token
-             return past_kvs, seq_len, seq_len
-
-        # Calculate how many tokens to keep in total (including the last one)
-        num_to_keep_total = math.ceil(seq_len * self.pruning_ratio)
-        num_to_keep_total = max(1, num_to_keep_total) # Ensure at least the last token is kept
-
-        if num_to_keep_total >= seq_len: # No pruning needed
-            return past_kvs, seq_len, seq_len
-
-        kept_len = num_to_keep_total
-        start_index = seq_len - num_to_keep_total
-        indices_to_keep = torch.arange(start_index, seq_len, device=past_kvs[0][0].device)
-
-        for key, value in past_kvs:
-            pruned_key = torch.index_select(key, -2, indices_to_keep)
-            pruned_value = torch.index_select(value, -2, indices_to_keep)
-            new_past.append((pruned_key, pruned_value))
-
-        return new_past, seq_len, kept_len
-
-
-class BothRatioStrategy(EvictionStrategy):
-    """
-    Keeps N/2 tokens from the start and N/2 tokens from the end, based on a ratio N,
-    plus the most recent token (ensuring it's included).
-    """
-    def __init__(self, pruning_ratio: float):
-        if not 0.0 <= pruning_ratio <= 1.0:
-            raise ValueError("pruning_ratio must be between 0.0 and 1.0")
-        self.pruning_ratio = pruning_ratio
-
-    def evict(self, past_kvs: List[KeyValue]) -> Tuple[List[KeyValue], int, int]:
-        if not past_kvs:
-            return [], 0, 0
-
-        new_past: List[KeyValue] = []
-        seq_len = past_kvs[0][0].size(-2)
-
-        if seq_len <= 1: # Cannot prune if only one token
-            return past_kvs, seq_len, seq_len
-
-        # Calculate total tokens to keep (excluding the last one initially)
-        num_to_keep_from_past = math.ceil((seq_len - 1) * self.pruning_ratio)
-
-        if num_to_keep_from_past >= seq_len - 1: # Keeping all past tokens + the last one
-            return past_kvs, seq_len, seq_len
-
-        # Split keepers between top and bottom
-        num_top = num_to_keep_from_past // 2
-        num_bottom = num_to_keep_from_past - num_top
-
-        top_indices = torch.arange(num_top, device=past_kvs[0][0].device)
-
-        # Bottom indices need to exclude the very last token (index seq_len - 1) for now
-        bottom_start_index = (seq_len - 1) - num_bottom
-        bottom_indices = torch.arange(bottom_start_index, seq_len - 1, device=past_kvs[0][0].device)
-
-        # Always include the last token
-        last_index = torch.tensor([seq_len - 1], device=past_kvs[0][0].device)
-
-        # Combine, remove duplicates (in case bottom includes last_index range), and sort
-        indices_to_keep = torch.cat([top_indices, bottom_indices, last_index])
-        indices_to_keep = torch.unique(indices_to_keep) # Handles overlap if num_bottom is large
-        indices_to_keep = torch.sort(indices_to_keep).values
-        kept_len = len(indices_to_keep)
-
-        for key, value in past_kvs:
-            pruned_key = torch.index_select(key, -2, indices_to_keep)
-            pruned_value = torch.index_select(value, -2, indices_to_keep)
-            new_past.append((pruned_key, pruned_value))
-
-        return new_past, seq_len, kept_len
-
-
-# --- End New Strategies ---
-
-class RandomSamplingStrategy(EvictionStrategy):
-    """
-    Eviction strategy that randomly samples up to `max_length` tokens
-    from the cache for each layer, always keeping the most recent token.
-    """
-    def __init__(self, max_length: int, seed: Optional[int] = None):
-        if max_length <= 0:
-             raise ValueError("max_length must be positive")
-        self.max_length = max_length
-        self.generator = torch.Generator().manual_seed(seed) if seed is not None else None
-
-    def evict(self, past_kvs: List[KeyValue]) -> Tuple[List[KeyValue], int, int]:
-        if not past_kvs:
-             return [], 0, 0
-
-        new_past: List[KeyValue] = []
-        seq_len = past_kvs[0][0].size(-2)
-        kept_len = seq_len
-
-        if seq_len > self.max_length:
-             kept_len = self.max_length
-             num_to_sample = self.max_length - 1 # Need to sample N-1 from the past
-             if num_to_sample > 0:
-                 # Sample from indices 0 to seq_len-2
-                 perm = torch.randperm(seq_len - 1, generator=self.generator, device=past_kvs[0][0].device)
-                 past_indices = perm[:num_to_sample]
-                 # Include the last index
-                 last_index = torch.tensor([seq_len - 1], device=past_kvs[0][0].device)
-                 idx = torch.cat([past_indices, last_index])
-                 idx, _ = torch.sort(idx) # Sort to approximately preserve order
-             else: # Only keep the last token
-                 idx = torch.tensor([seq_len - 1], device=past_kvs[0][0].device)
-
-             for key, value in past_kvs:
-                 key = key[..., idx, :]
-                 value = value[..., idx, :]
-                 new_past.append((key, value))
-        else:
-            # No pruning needed
-            new_past = past_kvs
-
-        return new_past, seq_len, kept_len
-
-
-class StridedStrategy(EvictionStrategy):
-    """
-    Eviction strategy that keeps every N-th token up to `max_length` tokens,
-    sampling uniformly across the sequence, always including the last token.
-    """
-    def __init__(self, max_length: int):
-        if max_length <= 0:
-             raise ValueError("max_length must be positive")
-        self.max_length = max_length
-
-    def evict(self, past_kvs: List[KeyValue]) -> Tuple[List[KeyValue], int, int]:
-        if not past_kvs:
-             return [], 0, 0
-
-        new_past: List[KeyValue] = []
-        seq_len = past_kvs[0][0].size(-2)
-        kept_len = seq_len
-
-        if seq_len > self.max_length:
-             kept_len = self.max_length
-             # generate uniformly spaced indices from 0 to seq_len-2
-             # We want max_length-1 indices from the past
-             indices = torch.linspace(0, seq_len - 2, steps=self.max_length - 1, device=past_kvs[0][0].device).long()
-             last_index = torch.tensor([seq_len - 1], device=past_kvs[0][0].device)
-             idx = torch.cat([indices, last_index])
-             idx = torch.unique(idx) # Ensure last index isn't duplicated
-             idx, _ = torch.sort(idx) # Maintain order
-
-             # Adjust kept_len if unique operation reduced size
-             kept_len = len(idx)
-
-             for key, value in past_kvs:
-                 key = key[..., idx, :]
-                 value = value[..., idx, :]
-                 new_past.append((key, value))
-        else:
-            new_past = past_kvs
-
-        return new_past, seq_len, kept_len
-
 class BlockAverageStrategy(EvictionStrategy):
     """
     Eviction strategy that divides the sequence into blocks of size `block_size`
@@ -394,10 +140,287 @@ class BlockAverageStrategy(EvictionStrategy):
         return new_past, seq_len, kept_len
 
 
+# Fix for the device mismatch error in ratio-based strategies
+
+class TopRatioStrategy(EvictionStrategy):
+    """
+    Keeps the first N tokens based on a ratio, plus the most recent token.
+    """
+    def __init__(self, pruning_ratio: float):
+        if not 0.0 <= pruning_ratio <= 1.0:
+            raise ValueError("pruning_ratio must be between 0.0 and 1.0")
+        self.pruning_ratio = pruning_ratio
+
+    def evict(self, past_kvs: List[KeyValue]) -> Tuple[List[KeyValue], int, int]:
+        if not past_kvs:
+            return [], 0, 0
+
+        new_past: List[KeyValue] = []
+        seq_len = past_kvs[0][0].size(-2)
+
+        if seq_len <= 1: # Cannot prune if only one token
+             return past_kvs, seq_len, seq_len
+
+        # Calculate how many tokens to keep from the beginning (excluding the last one)
+        # Ensure at least one token is kept if ratio > 0, otherwise keep only the last.
+        num_to_keep_from_past = math.ceil((seq_len - 1) * self.pruning_ratio)
+        num_to_keep_total = num_to_keep_from_past + 1 # Add the last token
+
+        if num_to_keep_total >= seq_len: # No pruning needed if keeping all or more
+             return past_kvs, seq_len, seq_len
+
+        kept_len = num_to_keep_total
+
+        for key, value in past_kvs:
+            # Get the device of the current key/value tensors
+            device = key.device
+            
+            # Create indices on the same device as the key/value tensors
+            first_indices = torch.arange(num_to_keep_from_past, device=device)
+            last_index = torch.tensor([seq_len - 1], device=device)
+            indices_to_keep = torch.cat([first_indices, last_index])
+
+            pruned_key = torch.index_select(key, -2, indices_to_keep)
+            pruned_value = torch.index_select(value, -2, indices_to_keep)
+            new_past.append((pruned_key, pruned_value))
+
+        return new_past, seq_len, kept_len
+
+
+class BottomRatioStrategy(EvictionStrategy):
+    """
+    Keeps the last N tokens based on a ratio, plus the most recent token
+    (which is inherently included in the 'last N'). Equivalent to WindowStrategy
+    if window size is calculated from ratio.
+    """
+    def __init__(self, pruning_ratio: float):
+        if not 0.0 <= pruning_ratio <= 1.0:
+            raise ValueError("pruning_ratio must be between 0.0 and 1.0")
+        self.pruning_ratio = pruning_ratio
+
+    def evict(self, past_kvs: List[KeyValue]) -> Tuple[List[KeyValue], int, int]:
+        if not past_kvs:
+            return [], 0, 0
+
+        new_past: List[KeyValue] = []
+        seq_len = past_kvs[0][0].size(-2)
+
+        if seq_len <= 1: # Cannot prune if only one token
+             return past_kvs, seq_len, seq_len
+
+        # Calculate how many tokens to keep in total (including the last one)
+        num_to_keep_total = math.ceil(seq_len * self.pruning_ratio)
+        num_to_keep_total = max(1, num_to_keep_total) # Ensure at least the last token is kept
+
+        if num_to_keep_total >= seq_len: # No pruning needed
+            return past_kvs, seq_len, seq_len
+
+        kept_len = num_to_keep_total
+        
+        for key, value in past_kvs:
+            # Get the device of the current key/value tensors
+            device = key.device
+            
+            start_index = seq_len - num_to_keep_total
+            indices_to_keep = torch.arange(start_index, seq_len, device=device)
+
+            pruned_key = torch.index_select(key, -2, indices_to_keep)
+            pruned_value = torch.index_select(value, -2, indices_to_keep)
+            new_past.append((pruned_key, pruned_value))
+
+        return new_past, seq_len, kept_len
+
+
+class BothRatioStrategy(EvictionStrategy):
+    """
+    Keeps N/2 tokens from the start and N/2 tokens from the end, based on a ratio N,
+    plus the most recent token (ensuring it's included).
+    """
+    def __init__(self, pruning_ratio: float):
+        if not 0.0 <= pruning_ratio <= 1.0:
+            raise ValueError("pruning_ratio must be between 0.0 and 1.0")
+        self.pruning_ratio = pruning_ratio
+
+    def evict(self, past_kvs: List[KeyValue]) -> Tuple[List[KeyValue], int, int]:
+        if not past_kvs:
+            return [], 0, 0
+
+        new_past: List[KeyValue] = []
+        seq_len = past_kvs[0][0].size(-2)
+
+        if seq_len <= 1: # Cannot prune if only one token
+            return past_kvs, seq_len, seq_len
+
+        # Calculate total tokens to keep (excluding the last one initially)
+        num_to_keep_from_past = math.ceil((seq_len - 1) * self.pruning_ratio)
+
+        if num_to_keep_from_past >= seq_len - 1: # Keeping all past tokens + the last one
+            return past_kvs, seq_len, seq_len
+
+        # Split keepers between top and bottom
+        num_top = num_to_keep_from_past // 2
+        num_bottom = num_to_keep_from_past - num_top
+
+        for key, value in past_kvs:
+            # Get the device of the current key/value tensors
+            device = key.device
+            
+            top_indices = torch.arange(num_top, device=device)
+
+            # Bottom indices need to exclude the very last token (index seq_len - 1) for now
+            bottom_start_index = (seq_len - 1) - num_bottom
+            bottom_indices = torch.arange(bottom_start_index, seq_len - 1, device=device)
+
+            # Always include the last token
+            last_index = torch.tensor([seq_len - 1], device=device)
+
+            # Combine, remove duplicates (in case bottom includes last_index range), and sort
+            indices_to_keep = torch.cat([top_indices, bottom_indices, last_index])
+            indices_to_keep = torch.unique(indices_to_keep) # Handles overlap if num_bottom is large
+            indices_to_keep = torch.sort(indices_to_keep).values
+            
+            pruned_key = torch.index_select(key, -2, indices_to_keep)
+            pruned_value = torch.index_select(value, -2, indices_to_keep)
+            new_past.append((pruned_key, pruned_value))
+
+        kept_len = new_past[0][0].size(-2)  # Get the actual kept length after pruning
+        return new_past, seq_len, kept_len
+
+# Also fix the same issue in other strategies that use index_select
+class WindowStrategy(EvictionStrategy):
+    """
+    Eviction strategy that retains only the most recent `max_length` tokens
+    in the cache for each layer.
+    """
+    def __init__(self, max_length: int):
+        if max_length <= 0:
+             raise ValueError("max_length must be positive")
+        self.max_length = max_length
+
+    def evict(self, past_kvs: List[KeyValue]) -> Tuple[List[KeyValue], int, int]:
+        if not past_kvs:
+             return [], 0, 0
+
+        new_past: List[KeyValue] = []
+        # Get original sequence length from the first layer (assume all layers have same length)
+        seq_len = past_kvs[0][0].size(-2)
+        kept_len = seq_len # Default if no pruning happens
+
+        for key, value in past_kvs:
+            # key, value shape: (batch_size, num_heads, seq_len, head_dim)
+            current_seq_len = key.size(-2)
+            if current_seq_len > self.max_length:
+                # Get the device of the current key/value tensors
+                device = key.device
+                
+                # keep only the last `max_length` positions
+                keep_indices = torch.arange(current_seq_len - self.max_length, current_seq_len, device=device)
+                key = torch.index_select(key, -2, keep_indices)
+                value = torch.index_select(value, -2, keep_indices)
+                kept_len = self.max_length # Update kept_len
+            new_past.append((key, value))
+
+        return new_past, seq_len, kept_len
+
+
+class RandomSamplingStrategy(EvictionStrategy):
+    """
+    Eviction strategy that randomly samples up to `max_length` tokens
+    from the cache for each layer, always keeping the most recent token.
+    """
+    def __init__(self, max_length: int, seed: Optional[int] = None):
+        if max_length <= 0:
+             raise ValueError("max_length must be positive")
+        self.max_length = max_length
+        self.generator = torch.Generator().manual_seed(seed) if seed is not None else None
+
+    def evict(self, past_kvs: List[KeyValue]) -> Tuple[List[KeyValue], int, int]:
+        if not past_kvs:
+             return [], 0, 0
+
+        new_past: List[KeyValue] = []
+        seq_len = past_kvs[0][0].size(-2)
+        kept_len = seq_len
+
+        if seq_len > self.max_length:
+             kept_len = self.max_length
+             num_to_sample = self.max_length - 1 # Need to sample N-1 from the past
+             
+             for key, value in past_kvs:
+                 # Get the device of the current key/value tensors
+                 device = key.device
+                 
+                 if num_to_sample > 0:
+                     # Sample from indices 0 to seq_len-2
+                     # Make sure to create the randperm on the correct device
+                     perm = torch.randperm(seq_len - 1, generator=self.generator, device=device)
+                     past_indices = perm[:num_to_sample]
+                     # Include the last index
+                     last_index = torch.tensor([seq_len - 1], device=device)
+                     idx = torch.cat([past_indices, last_index])
+                     idx, _ = torch.sort(idx) # Sort to approximately preserve order
+                 else: # Only keep the last token
+                     idx = torch.tensor([seq_len - 1], device=device)
+
+                 key = key[..., idx, :]
+                 value = value[..., idx, :]
+                 new_past.append((key, value))
+        else:
+            # No pruning needed
+            new_past = past_kvs
+
+        return new_past, seq_len, kept_len
+
+
+class StridedStrategy(EvictionStrategy):
+    """
+    Eviction strategy that keeps every N-th token up to `max_length` tokens,
+    sampling uniformly across the sequence, always including the last token.
+    """
+    def __init__(self, max_length: int):
+        if max_length <= 0:
+             raise ValueError("max_length must be positive")
+        self.max_length = max_length
+
+    def evict(self, past_kvs: List[KeyValue]) -> Tuple[List[KeyValue], int, int]:
+        if not past_kvs:
+             return [], 0, 0
+
+        new_past: List[KeyValue] = []
+        seq_len = past_kvs[0][0].size(-2)
+        kept_len = seq_len
+
+        if seq_len > self.max_length:
+             kept_len = self.max_length
+             
+             for key, value in past_kvs:
+                 # Get the device of the current key/value tensors
+                 device = key.device
+                 
+                 # generate uniformly spaced indices from 0 to seq_len-2
+                 # We want max_length-1 indices from the past
+                 indices = torch.linspace(0, seq_len - 2, steps=self.max_length - 1, device=device).long()
+                 last_index = torch.tensor([seq_len - 1], device=device)
+                 idx = torch.cat([indices, last_index])
+                 idx = torch.unique(idx) # Ensure last index isn't duplicated
+                 idx, _ = torch.sort(idx) # Maintain order
+
+                 # Adjust kept_len if unique operation reduced size
+                 kept_len = len(idx)
+
+                 key = key[..., idx, :]
+                 value = value[..., idx, :]
+                 new_past.append((key, value))
+        else:
+            new_past = past_kvs
+
+        return new_past, seq_len, kept_len
+
+
 class AttentionScoreStrategy(EvictionStrategy):
     """
     Eviction strategy that selects tokens with highest attention-like scores
-    with respect to the most recent token’s key vector. Always retains
+    with respect to the most recent token's key vector. Always retains
     the newest token and picks the top (max_length-1) prior tokens by score.
     """
     def __init__(self, max_length: int):
@@ -421,6 +444,7 @@ class AttentionScoreStrategy(EvictionStrategy):
             # In a real scenario, might average scores across layers or use other heuristics
             key_l0, value_l0 = past_kvs[0]
             batch, heads, _, head_dim = key_l0.shape
+            device = key_l0.device  # Get the device of the key tensor
 
             if batch != 1:
                 # Keep original behavior for simplicity, but could average over batch
@@ -447,7 +471,7 @@ class AttentionScoreStrategy(EvictionStrategy):
                 idx.append(topk_indices)
 
             # Include the last index (newest token)
-            last_idx = torch.tensor([seq_len - 1], device=key_l0.device, dtype=torch.long) # Ensure long dtype
+            last_idx = torch.tensor([seq_len - 1], device=device, dtype=torch.long) # Ensure long dtype
             idx.append(last_idx)
 
             # Combine, sort, and apply to all layers
@@ -468,8 +492,6 @@ class AttentionScoreStrategy(EvictionStrategy):
              new_past = past_kvs
 
         return new_past, seq_len, kept_len
-
-
 class KVCacheManager:
     """
     Manager for Transformer KV cache. Users can update the cache with
@@ -510,5 +532,6 @@ class KVCacheManager:
     #     Clear the cache completely.
     #     """
     #     self.cache = None
+
 
 

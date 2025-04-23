@@ -1,0 +1,67 @@
+[
+  {
+    "strategy": "attn_top1024t",
+    "responses": [
+      {
+        "question_id": 108,
+        "category": "reasoning",
+        "prompt": "<s>[INST] Which word does not belong with the others?\ntyre, steering wheel, car, engine [/INST]",
+        "response": " The word that does not belong with the others is \"tyre.\" The other three words are all related to the interior or mechanics of a car, while \"tyre\" is a British English term for \"tire.\"",
+        "metrics": {
+          "input_tokens": 29,
+          "output_tokens": 48,
+          "total_tokens_processed": 77,
+          "total_time_s": 1.6633837223052979,
+          "avg_token_time_s": 0.034409607450167336,
+          "tokens_per_second": 28.85684124254648,
+          "avg_kv_cache_size_mb": 26.25,
+          "avg_kept_ratio": 1.0,
+          "current_memory_mb": 4130.220703125,
+          "peak_memory_mb": 4142.0341796875,
+          "raw_metrics_summary": {
+            "num_steps": 48,
+            "min_kv_cache_mb": 14.5,
+            "max_kv_cache_mb": 38.0,
+            "min_kept_ratio": 0.3815789473684211,
+            "max_kept_ratio": 1.0
+          }
+        }
+      },
+      {
+        "question_id": 110,
+        "category": "reasoning",
+        "prompt": "<s>[INST] Parents have complained to the principal about bullying during recess. The principal wants to quickly resolve this, instructing recess aides to be vigilant. Which situation should the aides report to the principal?\na) An unengaged girl is sitting alone on a bench, engrossed in a book and showing no interaction with her peers.\nb) Two boys engaged in a one-on-one basketball game are involved in a heated argument regarding the last scored basket.\nc) A group of four girls has surrounded another girl and appears to have taken possession of her backpack.\nd) Three boys are huddled over a handheld video game, which is against the rules and not permitted on school grounds. [/INST]",
+        "response": " Based on the information provided, the situation that the recess aides should report to the principal is (c) A group of four girls has surrounded another girl and appears to have taken possession of her backpack.\n\nThis situation involves bullying, which is a violation of the school's policy and can have serious consequences for the victimized student. The aides should report the incident to the principal as soon as possible to ensure that the situation is addressed promptly and appropriately.\n\nThe other options do not necessarily involve bullying or other inappropriate behavior that requires reporting to the principal:\n\n(a) An unengaged girl sitting alone on a bench is not necessarily a cause for concern, as some students may prefer to read or engage in other quiet activities during recess.\n\n(b) A heated argument between two boys during a one-on-one basketball game is a normal part of play and does not necessarily require reporting to the principal.\n\n(d) Three boys playing a handheld video game on school grounds may be a violation of the school's rules, but it is not necessarily a bullying incident that requires reporting to the principal.",
+        "metrics": {
+          "input_tokens": 167,
+          "output_tokens": 251,
+          "total_tokens_processed": 418,
+          "total_time_s": 8.687787532806396,
+          "avg_token_time_s": 0.03437158406018261,
+          "tokens_per_second": 28.891130112492522,
+          "avg_kv_cache_size_mb": 146.0,
+          "avg_kept_ratio": 1.0,
+          "current_memory_mb": 4184.9619140625,
+          "peak_memory_mb": 4252.421875,
+          "raw_metrics_summary": {
+            "num_steps": 251,
+            "min_kv_cache_mb": 83.5,
+            "max_kv_cache_mb": 208.5,
+            "min_kept_ratio": 0.40047961630695444,
+            "max_kept_ratio": 1.0
+          }
+        }
+      }
+    ],
+    "aggregated_metrics": {
+      "avg_total_time_per_prompt_s": 5.175585627555847,
+      "avg_peak_memory_per_prompt_mb": 4197.22802734375,
+      "avg_token_time_s": 0.034390595755174974,
+      "avg_kv_cache_size_mb": 86.125,
+      "avg_kept_ratio": 1.0,
+      "overall_tokens_per_second": 28.885620055058556,
+      "success_rate": 1.0,
+      "avg_output_tokens": 149.5
+    }
+  }
+]

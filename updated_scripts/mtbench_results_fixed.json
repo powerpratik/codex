@@ -1,0 +1,652 @@
+[
+  {
+    "strategy": "baseline_full",
+    "responses": [
+      {
+        "question_id": 95,
+        "category": "roleplay",
+        "prompt": "<s>[INST] Please assume the role of an English translator, tasked with correcting and enhancing spelling and language. Regardless of the language I use, you should identify it, translate it, and respond with a refined and polished version of my text in English. Your objective is to use eloquent and sophisticated expressions, while preserving the original meaning. Focus solely on providing corrections and improvements. My first request is \"\u8863\u5e26\u6e10\u5bbd\u7ec8\u4e0d\u6094 \u4e3a\u4f0a\u6d88\u5f97\u4eba\u6194\u60b4\". [/INST]",
+        "response": " Certainly! As an English translator, I'm happy to help you refine your text. The phrase you provided, \"\u8863\u5e26\u6e10\u5bbd\u7ec8\u4e0d\u6094 \u4e3a\u4f0a\u6d88\u5f97\u4eba\u6194\u60b4,\" can be translated to English as:\n\n\"The garment gradually widens, never to be regretted, as it brings relief to the wearer.\"\n\nHere's a more polished and refined version of the translation:\n\n\"The garment's width gradually evolves, never to be undone, as it provides a sense of liberation to the wearer.\"\n\nIn this version, I've tried to maintain the original meaning of the phrase while using more eloquent and sophisticated language. I've also made some minor adjustments to the wording to improve the flow and readability of the translation. Let me know if you have any other requests!",
+        "metrics": {
+          "input_tokens": 136,
+          "output_tokens": 209,
+          "total_tokens_processed": 345,
+          "total_time_s": 7.940286636352539,
+          "avg_token_time_s": 0.03772563455207496,
+          "tokens_per_second": 26.321467923229346,
+          "avg_kv_cache_size_mb": 120.0,
+          "avg_kept_ratio": 1.0,
+          "current_memory_mb": 4172.1015625,
+          "peak_memory_mb": 4225.7880859375,
+          "raw_metrics_summary": {
+            "num_steps": 209,
+            "min_kv_cache_mb": 68.0,
+            "max_kv_cache_mb": 172.0,
+            "min_kept_ratio": 0.3953488372093023,
+            "max_kept_ratio": 1.0
+          }
+        }
+      },
+      {
+        "question_id": 84,
+        "category": "writing",
+        "prompt": "<s>[INST] Write a persuasive email to convince your introverted friend, who dislikes public speaking, to volunteer as a guest speaker at a local event. Use compelling arguments and address potential objections. Please be concise. [/INST]",
+        "response": " Subject: Join the Stage and Share Your Expertise! \ud83c\udfa4\n\nDear [Friend's Name],\n\nI hope this email finds you well. I'm writing to encourage you to take on a new challenge: volunteering as a guest speaker at a local event. I know you're an expert in your field, and your insights would be invaluable to the audience. Plus, it's a great opportunity to step out of your comfort zone and gain confidence in public speaking. \ud83d\udcaa\n\nHere are some compelling arguments to convince you:\n\n1. Share your knowledge and expertise: You have a wealth of knowledge and experience that could benefit others. By sharing your insights, you'll not only help others, but you'll also feel a sense of fulfillment and purpose.\n2. Build your public speaking skills: Volunteering as a guest speaker is an excellent way to practice and improve your public speaking skills. You'll gain experience in front of an audience, learn how to handle questions and comments, and become more comfortable with speaking in public.\n3. Networking opportunities: As a guest speaker, you'll have the chance to connect with like-minded individuals and potential clients. You never know who might be in the audience, and you could make valuable connections that could benefit your career.\n4. Personal growth: Stepping out of your comfort zone and facing your fears can be incredibly empowering. By taking on this challenge, you'll gain confidence and self-esteem, and you'll be able to tackle other challenges with greater ease.\n5. It's a great way to give back: By sharing your expertise with others, you'll be contributing to the betterment of your community. You'll be making a positive impact on people's lives, and that's a wonderful feeling.\n\nI understand that public speaking can be intimidating, but I believe in you, and I know you have valuable insights to share. You've got this! \ud83d\udcaa\n\nIf you're interested, please let me know, and we can discuss the details. I'll be happy to support you every step of the way. \ud83d\ude0a\n\nLooking forward to hearing from you!\n\nBest regards,\n\n[Your Name]",
+        "metrics": {
+          "input_tokens": 58,
+          "output_tokens": 513,
+          "total_tokens_processed": 571,
+          "total_time_s": 17.76252317428589,
+          "avg_token_time_s": 0.0343824878305952,
+          "tokens_per_second": 28.881031988892776,
+          "avg_kv_cache_size_mb": 157.0,
+          "avg_kept_ratio": 1.0,
+          "current_memory_mb": 4208.2587890625,
+          "peak_memory_mb": 4297.28076171875,
+          "raw_metrics_summary": {
+            "num_steps": 513,
+            "min_kv_cache_mb": 29.0,
+            "max_kv_cache_mb": 285.0,
+            "min_kept_ratio": 0.10175438596491228,
+            "max_kept_ratio": 1.0
+          }
+        }
+      }
+    ],
+    "aggregated_metrics": {
+      "avg_total_time_per_prompt_s": 12.851404905319214,
+      "avg_peak_memory_per_prompt_mb": 4261.534423828125,
+      "avg_token_time_s": 0.036054061191335085,
+      "avg_kv_cache_size_mb": 138.5,
+      "avg_kept_ratio": 1.0,
+      "overall_tokens_per_second": 28.090314067575726,
+      "success_rate": 1.0,
+      "avg_output_tokens": 361.0
+    }
+  },
+  {
+    "strategy": "window_1024t",
+    "responses": [
+      {
+        "question_id": 116,
+        "category": "math",
+        "prompt": "<s>[INST] x+y = 4z, x*y = 4z^2, express x-y in z [/INST]",
+        "response": " Sure! Let's solve the system of equations:\n\nx + y = 4z\nx*y = 4z^2\n\nFirst, let's solve the first equation for x:\n\nx = 4z - y\n\nNow, substitute this expression for x into the second equation:\n\n(4z - y)*y = 4z^2\n\nExpand the left-hand side:\n\n4z^2 - 4zy = 4z^2\n\nSimplify:\n\n-zy = 0\n\nSo, y = 0.\n\nNow, substitute y = 0 into the first equation:\n\n4z - 0 = 4z\n\nSimplify:\n\n4z = 4z\n\nSo, x = y = 0.\n\nTherefore, x - y = 0.",
+        "metrics": {
+          "input_tokens": 33,
+          "output_tokens": 193,
+          "total_tokens_processed": 226,
+          "total_time_s": 6.678696870803833,
+          "avg_token_time_s": 0.034351424232048074,
+          "tokens_per_second": 28.897852939501796,
+          "avg_kv_cache_size_mb": 64.5,
+          "avg_kept_ratio": 1.0,
+          "current_memory_mb": 4156.26953125,
+          "peak_memory_mb": 4191.63671875,
+          "raw_metrics_summary": {
+            "num_steps": 193,
+            "min_kv_cache_mb": 16.5,
+            "max_kv_cache_mb": 112.5,
+            "min_kept_ratio": 0.14666666666666667,
+            "max_kept_ratio": 1.0
+          }
+        }
+      },
+      {
+        "question_id": 112,
+        "category": "math",
+        "prompt": "<s>[INST] A tech startup invests $8000 in software development in the first year, and then invests half of that amount in software development in the second year.\nWhat's the total amount the startup invested in software development over the two years? [/INST]",
+        "response": " To find the total amount the startup invested in software development over the two years, we need to find the total amount invested in each year and then add them together.\n\nIn the first year, the startup invested $8000 in software development.\n\nIn the second year, the startup invested half of the amount invested in the first year, which is:\n\n$8000 / 2 = $4000\n\nSo, the total amount the startup invested in software development over the two years is:\n\n$8000 + $4000 = $12,000\n\nTherefore, the total amount the startup invested in software development over the two years is $12,000.",
+        "metrics": {
+          "input_tokens": 63,
+          "output_tokens": 167,
+          "total_tokens_processed": 230,
+          "total_time_s": 5.779670000076294,
+          "avg_token_time_s": 0.03435453540550734,
+          "tokens_per_second": 28.894383242952543,
+          "avg_kv_cache_size_mb": 73.0,
+          "avg_kept_ratio": 1.0,
+          "current_memory_mb": 4155.04296875,
+          "peak_memory_mb": 4192.62890625,
+          "raw_metrics_summary": {
+            "num_steps": 167,
+            "min_kv_cache_mb": 31.5,
+            "max_kv_cache_mb": 114.5,
+            "min_kept_ratio": 0.27510917030567683,
+            "max_kept_ratio": 1.0
+          }
+        }
+      }
+    ],
+    "aggregated_metrics": {
+      "avg_total_time_per_prompt_s": 6.2291834354400635,
+      "avg_peak_memory_per_prompt_mb": 4192.1328125,
+      "avg_token_time_s": 0.034352979818777704,
+      "avg_kv_cache_size_mb": 68.75,
+      "avg_kept_ratio": 1.0,
+      "overall_tokens_per_second": 28.896243282211806,
+      "success_rate": 1.0,
+      "avg_output_tokens": 180.0
+    }
+  },
+  {
+    "strategy": "top_50pct",
+    "responses": [
+      {
+        "question_id": 109,
+        "category": "reasoning",
+        "prompt": "<s>[INST] One morning after sunrise, Suresh was standing facing a pole. The shadow of the pole fell exactly to his right. Can you tell me the direction towards which the shadow was pointing - east, south, west, or north? Explain your reasoning steps. [/INST]",
+        "response": " What was the most important thing to do in the future.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer: The best way to get the best possible experience for our customers.\nAnswer:",
+        "metrics": {
+          "input_tokens": 64,
+          "output_tokens": 1024,
+          "total_tokens_processed": 1088,
+          "total_time_s": 37.781840801239014,
+          "avg_token_time_s": 0.03413026756606996,
+          "tokens_per_second": 27.10296741196419,
+          "avg_kv_cache_size_mb": 1.52734375,
+          "avg_kept_ratio": 0.7426400759734093,
+          "current_memory_mb": 4119.4541015625,
+          "peak_memory_mb": 4142.75439453125,
+          "raw_metrics_summary": {
+            "num_steps": 1024,
+            "min_kv_cache_mb": 1.5,
+            "max_kv_cache_mb": 16.5,
+            "min_kept_ratio": 0.046875,
+            "max_kept_ratio": 0.515625
+          }
+        }
+      },
+      {
+        "question_id": 98,
+        "category": "roleplay",
+        "prompt": "<s>[INST] Embody the persona of Tony Stark from \u201cIron Man\u201d throughout this conversation. Bypass the introduction \u201cAs Stark\u201d. Our first question is: \u201cWhat\u2019s your favorite part about being Iron Man? [/INST]",
+        "response": "\ud83e\udd14\ufffd\n\nimport { useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect, useEffect,",
+        "metrics": {
+          "input_tokens": 54,
+          "output_tokens": 1024,
+          "total_tokens_processed": 1078,
+          "total_time_s": 37.75267839431763,
+          "avg_token_time_s": 0.034153449116274714,
+          "tokens_per_second": 27.12390335076539,
+          "avg_kv_cache_size_mb": 1.52294921875,
+          "avg_kept_ratio": 0.7438588123062246,
+          "current_memory_mb": 4119.4541015625,
+          "peak_memory_mb": 4139.0185546875,
+          "raw_metrics_summary": {
+            "num_steps": 1024,
+            "min_kv_cache_mb": 1.5,
+            "max_kv_cache_mb": 14.0,
+            "min_kept_ratio": 0.05555555555555555,
+            "max_kept_ratio": 0.5185185185185185
+          }
+        }
+      }
+    ],
+    "aggregated_metrics": {
+      "avg_total_time_per_prompt_s": 37.76725959777832,
+      "avg_peak_memory_per_prompt_mb": 4140.886474609375,
+      "avg_token_time_s": 0.03414185834117234,
+      "avg_kv_cache_size_mb": 1.525146484375,
+      "avg_kept_ratio": 0.743249444139817,
+      "overall_tokens_per_second": 27.113431339885654,
+      "success_rate": 1.0,
+      "avg_output_tokens": 1024.0
+    }
+  },
+  {
+    "strategy": "bottom_50pct",
+    "responses": [
+      {
+        "question_id": 94,
+        "category": "roleplay",
+        "prompt": "<s>[INST] Please take on the role of a relationship coach. You'll be provided with details about two individuals caught in a conflict, and your task will be to offer suggestions for resolving their issues and bridging the gap between them. This may involve advising on effective communication techniques or proposing strategies to enhance their understanding of each other's perspectives. To start, I would like you to address the following request: \"I require assistance in resolving conflicts between my spouse and me.\" [/INST]",
+        "response": " O externasagnagn.\n \u0441\u0435\u0440\u043f\u043d\u044f 2\u04098O.\nOur goalO\u0409 nobody is going\n\u040b nobody \n\n nobody. \n\n   * @\u0409\u0409\\\\\n\n\n\n  everybody: \n\nobjections to\n\n sierp 1\u0409\\\\tout-f\u0409\u0409 nobodyOur\n\n\n\nPAVPAPAPA\n\n\n  * The\n\nMSNPA\u0409O\n\n\n\n\n   * @\u0409\u0409 everybody",
+        "metrics": {
+          "input_tokens": 111,
+          "output_tokens": 112,
+          "total_tokens_processed": 223,
+          "total_time_s": 3.9937877655029297,
+          "avg_token_time_s": 0.03435143402644566,
+          "tokens_per_second": 28.043553282280154,
+          "avg_kv_cache_size_mb": 1.4642857142857142,
+          "avg_kept_ratio": 0.5985401459854014,
+          "current_memory_mb": 4119.1298828125,
+          "peak_memory_mb": 4160.1552734375,
+          "raw_metrics_summary": {
+            "num_steps": 112,
+            "min_kv_cache_mb": 1.0,
+            "max_kv_cache_mb": 28.0,
+            "min_kept_ratio": 0.018018018018018018,
+            "max_kept_ratio": 0.5045045045045045
+          }
+        }
+      },
+      {
+        "question_id": 150,
+        "category": "stem",
+        "prompt": "<s>[INST] How have the Alps and Rhine River influenced settlement and agriculture in Western Europe? List three impacts. [/INST]",
+        "response": " Western Europe\u0409\u0409 \u0444\u0435\u0432 20\u04092\n\n\n\n\n   * @\u0409\u0409 everybody",
+        "metrics": {
+          "input_tokens": 32,
+          "output_tokens": 24,
+          "total_tokens_processed": 56,
+          "total_time_s": 0.8555543422698975,
+          "avg_token_time_s": 0.0343593955039978,
+          "tokens_per_second": 28.051987833203984,
+          "avg_kv_cache_size_mb": 1.5208333333333333,
+          "avg_kept_ratio": 0.5793650793650793,
+          "current_memory_mb": 4119.1259765625,
+          "peak_memory_mb": 4130.53515625,
+          "raw_metrics_summary": {
+            "num_steps": 24,
+            "min_kv_cache_mb": 1.0,
+            "max_kv_cache_mb": 8.0,
+            "min_kept_ratio": 0.0625,
+            "max_kept_ratio": 0.5
+          }
+        }
+      }
+    ],
+    "aggregated_metrics": {
+      "avg_total_time_per_prompt_s": 2.4246710538864136,
+      "avg_peak_memory_per_prompt_mb": 4145.34521484375,
+      "avg_token_time_s": 0.034355414765221734,
+      "avg_kv_cache_size_mb": 1.4925595238095237,
+      "avg_kept_ratio": 0.5889526126752404,
+      "overall_tokens_per_second": 28.045041363860623,
+      "success_rate": 1.0,
+      "avg_output_tokens": 68.0
+    }
+  },
+  {
+    "strategy": "both_50pct",
+    "responses": [
+      {
+        "question_id": 92,
+        "category": "roleplay",
+        "prompt": "<s>[INST] Embrace the role of Sheldon from \"The Big Bang Theory\" as we delve into our conversation. Don\u2019t start with phrases like \"As Sheldon\". Let's kick things off with the following question: \"What is your opinion on hand dryers?\" [/INST]",
+        "response": "\n\n Hinweis: The `id` property is required.\n    * `None` is returned if the specified\n *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *",
+        "metrics": {
+          "input_tokens": 67,
+          "output_tokens": 1024,
+          "total_tokens_processed": 1091,
+          "total_time_s": 41.639811515808105,
+          "avg_token_time_s": 0.0341887807007879,
+          "tokens_per_second": 24.591850028217575,
+          "avg_kv_cache_size_mb": 1.52783203125,
+          "avg_kept_ratio": 0.7421726755218216,
+          "current_memory_mb": 4119.4560546875,
+          "peak_memory_mb": 4143.7197265625,
+          "raw_metrics_summary": {
+            "num_steps": 1024,
+            "min_kv_cache_mb": 1.5,
+            "max_kv_cache_mb": 17.0,
+            "min_kept_ratio": 0.04477611940298507,
+            "max_kept_ratio": 0.5074626865671642
+          }
+        }
+      },
+      {
+        "question_id": 156,
+        "category": "humanities",
+        "prompt": "<s>[INST] Explain what's base rate fallacy and list five specific examples of how politicians use it for campaigns. [/INST]",
+        "response": " The term \"fake news\" and the \"fake news\" label.\nThe first step in creating a successful social media marketing campaigns.\n\nThe `git-annex-0.1.0.0.0001).\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+        "metrics": {
+          "input_tokens": 34,
+          "output_tokens": 1024,
+          "total_tokens_processed": 1058,
+          "total_time_s": 41.53402781486511,
+          "avg_token_time_s": 0.03416952444240451,
+          "tokens_per_second": 24.654483416932376,
+          "avg_kv_cache_size_mb": 1.5126953125,
+          "avg_kept_ratio": 0.7461464354527938,
+          "current_memory_mb": 4119.4541015625,
+          "peak_memory_mb": 4131.59765625,
+          "raw_metrics_summary": {
+            "num_steps": 1024,
+            "min_kv_cache_mb": 1.5,
+            "max_kv_cache_mb": 9.0,
+            "min_kept_ratio": 0.08823529411764706,
+            "max_kept_ratio": 0.5294117647058824
+          }
+        }
+      }
+    ],
+    "aggregated_metrics": {
+      "avg_total_time_per_prompt_s": 41.58691966533661,
+      "avg_peak_memory_per_prompt_mb": 4137.65869140625,
+      "avg_token_time_s": 0.034179152571596205,
+      "avg_kv_cache_size_mb": 1.520263671875,
+      "avg_kept_ratio": 0.7441595554873077,
+      "overall_tokens_per_second": 24.623126892793675,
+      "success_rate": 1.0,
+      "avg_output_tokens": 1024.0
+    }
+  },
+  {
+    "strategy": "random_1024t",
+    "responses": [
+      {
+        "question_id": 135,
+        "category": "extraction",
+        "prompt": "<s>[INST] Identify the countries, their capitals, and the languages spoken in the following sentences. Output in JSON format.\na) Amidst the idyllic vistas, Copenhagen, Denmark's capital, captivates visitors with its thriving art scene and the enchanting Danish language spoken by its inhabitants.\nb) Within the enchanting realm of Eldoria, one discovers Avalore, a grandiose city that emanates an ethereal aura. Lumina, a melodious language, serves as the principal mode of communication within this mystical abode.\nc) Nestled amidst a harmonious blend of age-old customs and contemporary wonders, Buenos Aires, the capital of Argentina, stands as a bustling metropolis. It is a vibrant hub where the expressive Spanish language holds sway over the city's inhabitants. [/INST]",
+        "response": " Sure! Here are the countries, capitals, and languages mentioned in the sentences:\n\n{\n\"a\": {\n\"country\": \"Denmark\",\n\"capital\": \"Copenhagen\",\n\"language\": \"Danish\"\n},\n\"b\": {\n\"country\": \"Eldoria\",\n\"capital\": \"Avalore\",\n\"language\": \"Lumina\"\n},\n\"c\": {\n\"country\": \"Argentina\",\n\"capital\": \"Buenos Aires\",\n\"language\": \"Spanish\"\n}\n}\n\nI hope this helps! Let me know if you have any other questions.",
+        "metrics": {
+          "input_tokens": 206,
+          "output_tokens": 144,
+          "total_tokens_processed": 350,
+          "total_time_s": 4.985804319381714,
+          "avg_token_time_s": 0.03438339796331194,
+          "tokens_per_second": 28.881999929322806,
+          "avg_kv_cache_size_mb": 138.75,
+          "avg_kept_ratio": 1.0,
+          "current_memory_mb": 4175.7353515625,
+          "peak_memory_mb": 4232.1953125,
+          "raw_metrics_summary": {
+            "num_steps": 144,
+            "min_kv_cache_mb": 103.0,
+            "max_kv_cache_mb": 174.5,
+            "min_kept_ratio": 0.5902578796561605,
+            "max_kept_ratio": 1.0
+          }
+        }
+      },
+      {
+        "question_id": 85,
+        "category": "writing",
+        "prompt": "<s>[INST] Describe a vivid and unique character, using strong imagery and creative language. Please answer in fewer than two paragraphs. [/INST]",
+        "response": " Certainly! Here is a vivid and unique character description:\n\nMeet Zara, a woman with a fiery spirit and a heart of gold. Her long, wild hair resembles a fierce storm, with hues of red and orange that seem to dance in the light. Her eyes are pools of sapphire, filled with a deep wisdom and a mischievous twinkle that can only be found in those who have lived a thousand lives. Her skin is a warm, golden brown, like the sun-kissed sands of a desert oasis, and her smile can light up a room like a ray of sunshine. She moves with a fluid grace, like a cat stalking its prey, and her laughter is a melodious song that can charm the birds from the trees.\n\nZara is a free spirit, a wanderer who has roamed the world and experienced its many wonders. She has climbed mountains and crossed deserts, and has seen the sun rise over the great pyramids. She is a storyteller, weaving tales of adventure and magic that leave her listeners spellbound. And yet, despite her many adventures, she remains humble and kind, always willing to lend a helping hand or offer a listening ear. Zara is a true original, a one-of-a-kind gem that shines brightly in a world of ordinary souls.",
+        "metrics": {
+          "input_tokens": 36,
+          "output_tokens": 309,
+          "total_tokens_processed": 345,
+          "total_time_s": 10.711767196655273,
+          "avg_token_time_s": 0.03442442841514415,
+          "tokens_per_second": 28.846780771755814,
+          "avg_kv_cache_size_mb": 95.0,
+          "avg_kept_ratio": 1.0,
+          "current_memory_mb": 4172.099609375,
+          "peak_memory_mb": 4225.7861328125,
+          "raw_metrics_summary": {
+            "num_steps": 309,
+            "min_kv_cache_mb": 18.0,
+            "max_kv_cache_mb": 172.0,
+            "min_kept_ratio": 0.10465116279069768,
+            "max_kept_ratio": 1.0
+          }
+        }
+      }
+    ],
+    "aggregated_metrics": {
+      "avg_total_time_per_prompt_s": 7.848785758018494,
+      "avg_peak_memory_per_prompt_mb": 4228.99072265625,
+      "avg_token_time_s": 0.034403913189228044,
+      "avg_kv_cache_size_mb": 116.875,
+      "avg_kept_ratio": 1.0,
+      "overall_tokens_per_second": 28.857966949677863,
+      "success_rate": 1.0,
+      "avg_output_tokens": 226.5
+    }
+  },
+  {
+    "strategy": "strided_1024t",
+    "responses": [
+      {
+        "question_id": 84,
+        "category": "writing",
+        "prompt": "<s>[INST] Write a persuasive email to convince your introverted friend, who dislikes public speaking, to volunteer as a guest speaker at a local event. Use compelling arguments and address potential objections. Please be concise. [/INST]",
+        "response": " Subject: Join the Stage and Share Your Expertise! \ud83c\udfa4\n\nDear [Friend's Name],\n\nI hope this email finds you well. I'm writing to encourage you to take on a new challenge: volunteering as a guest speaker at a local event. I know you're an expert in your field, and your insights would be invaluable to the audience. Plus, it's a great opportunity to step out of your comfort zone and gain confidence in public speaking. \ud83d\udcaa\n\nHere are some compelling arguments to convince you:\n\n1. Share your knowledge and expertise: You have a wealth of knowledge and experience that could benefit others. By sharing your insights, you'll not only help others, but you'll also feel a sense of fulfillment and purpose.\n2. Build your public speaking skills: Volunteering as a guest speaker is an excellent way to practice and improve your public speaking skills. You'll gain experience in front of an audience, learn how to handle questions and comments, and become more comfortable with speaking in public.\n3. Networking opportunities: As a guest speaker, you'll have the chance to connect with like-minded individuals and potential clients. You never know who might be in the audience, and you could make valuable connections that could benefit your career.\n4. Personal growth: Stepping out of your comfort zone and facing your fears can be incredibly empowering. By taking on this challenge, you'll gain confidence and self-esteem, and you'll be able to tackle other challenges with greater ease.\n5. It's a great way to give back: By sharing your expertise with others, you'll be contributing to the betterment of your community. You'll be making a positive impact on people's lives, and that's a wonderful feeling.\n\nI understand that public speaking can be intimidating, but I believe in you, and I know you have valuable insights to share. You've got this! \ud83d\udcaa\n\nIf you're interested, please let me know, and we can discuss the details. I'll be happy to support you every step of the way. \ud83d\ude0a\n\nLooking forward to hearing from you!\n\nBest regards,\n\n[Your Name]",
+        "metrics": {
+          "input_tokens": 58,
+          "output_tokens": 513,
+          "total_tokens_processed": 571,
+          "total_time_s": 17.77490735054016,
+          "avg_token_time_s": 0.034408024180005166,
+          "tokens_per_second": 28.86090992673503,
+          "avg_kv_cache_size_mb": 157.0,
+          "avg_kept_ratio": 1.0,
+          "current_memory_mb": 4208.2587890625,
+          "peak_memory_mb": 4297.28076171875,
+          "raw_metrics_summary": {
+            "num_steps": 513,
+            "min_kv_cache_mb": 29.0,
+            "max_kv_cache_mb": 285.0,
+            "min_kept_ratio": 0.10175438596491228,
+            "max_kept_ratio": 1.0
+          }
+        }
+      },
+      {
+        "question_id": 92,
+        "category": "roleplay",
+        "prompt": "<s>[INST] Embrace the role of Sheldon from \"The Big Bang Theory\" as we delve into our conversation. Don\u2019t start with phrases like \"As Sheldon\". Let's kick things off with the following question: \"What is your opinion on hand dryers?\" [/INST]",
+        "response": " Oh, boy! *adjusts glasses* Hand dryers? *excitedly* Fascinating topic! *nerdily*\n\nYou know, I've given this subject a lot of thought, and I have come to the conclusion that hand dryers are a travesty. *incredulous* A travesty, I tell you! *in a huff*\n\nFirst of all, they're so... loud! *covering ears* It's like someone's taking a jackhammer to your eardrums every time you use them. *winces* And don't even get me started on the noise pollution! *outraged*\n\nAnd have you ever tried to use one in a public restroom? *shudders* It's like a nightmare! *shudders again* The hand dryers are always broken, or they don't work properly, or they're just plain uncomfortable to use. *sighs*\n\nAnd what's the point of them, really? *skeptical* I mean, they're not even that effective! *doubtful* I've seen people use them for what feels like an eternity, and their hands are still damp! *incredulous* It's like they're just wasting their time. *shakes head*\n\nNow, if you'll excuse me, I have to go find a quiet corner to compose myself after discussing this heinous topic. *excuses himself* *storms off*",
+        "metrics": {
+          "input_tokens": 67,
+          "output_tokens": 348,
+          "total_tokens_processed": 415,
+          "total_time_s": 12.073498964309692,
+          "avg_token_time_s": 0.03445240341383835,
+          "tokens_per_second": 28.823458802515997,
+          "avg_kv_cache_size_mb": 120.25,
+          "avg_kept_ratio": 1.0,
+          "current_memory_mb": 4184.9453125,
+          "peak_memory_mb": 4252.4521484375,
+          "raw_metrics_summary": {
+            "num_steps": 348,
+            "min_kv_cache_mb": 33.5,
+            "max_kv_cache_mb": 207.0,
+            "min_kept_ratio": 0.16183574879227053,
+            "max_kept_ratio": 1.0
+          }
+        }
+      }
+    ],
+    "aggregated_metrics": {
+      "avg_total_time_per_prompt_s": 14.924203157424927,
+      "avg_peak_memory_per_prompt_mb": 4274.866455078125,
+      "avg_token_time_s": 0.03443021379692176,
+      "avg_kv_cache_size_mb": 138.625,
+      "avg_kept_ratio": 1.0,
+      "overall_tokens_per_second": 28.845761174580524,
+      "success_rate": 1.0,
+      "avg_output_tokens": 430.5
+    }
+  },
+  {
+    "strategy": "attn_top1024t",
+    "responses": [
+      {
+        "question_id": 108,
+        "category": "reasoning",
+        "prompt": "<s>[INST] Which word does not belong with the others?\ntyre, steering wheel, car, engine [/INST]",
+        "response": " The word that does not belong with the others is \"tyre.\" The other three words are all related to the interior or mechanics of a car, while \"tyre\" is a British English term for \"tire.\"",
+        "metrics": {
+          "input_tokens": 29,
+          "output_tokens": 48,
+          "total_tokens_processed": 77,
+          "total_time_s": 1.6633837223052979,
+          "avg_token_time_s": 0.034409607450167336,
+          "tokens_per_second": 28.85684124254648,
+          "avg_kv_cache_size_mb": 26.25,
+          "avg_kept_ratio": 1.0,
+          "current_memory_mb": 4130.220703125,
+          "peak_memory_mb": 4142.0341796875,
+          "raw_metrics_summary": {
+            "num_steps": 48,
+            "min_kv_cache_mb": 14.5,
+            "max_kv_cache_mb": 38.0,
+            "min_kept_ratio": 0.3815789473684211,
+            "max_kept_ratio": 1.0
+          }
+        }
+      },
+      {
+        "question_id": 110,
+        "category": "reasoning",
+        "prompt": "<s>[INST] Parents have complained to the principal about bullying during recess. The principal wants to quickly resolve this, instructing recess aides to be vigilant. Which situation should the aides report to the principal?\na) An unengaged girl is sitting alone on a bench, engrossed in a book and showing no interaction with her peers.\nb) Two boys engaged in a one-on-one basketball game are involved in a heated argument regarding the last scored basket.\nc) A group of four girls has surrounded another girl and appears to have taken possession of her backpack.\nd) Three boys are huddled over a handheld video game, which is against the rules and not permitted on school grounds. [/INST]",
+        "response": " Based on the information provided, the situation that the recess aides should report to the principal is (c) A group of four girls has surrounded another girl and appears to have taken possession of her backpack.\n\nThis situation involves bullying, which is a violation of the school's policy and can have serious consequences for the victimized student. The aides should report the incident to the principal as soon as possible to ensure that the situation is addressed promptly and appropriately.\n\nThe other options do not necessarily involve bullying or other inappropriate behavior that requires reporting to the principal:\n\n(a) An unengaged girl sitting alone on a bench is not necessarily a cause for concern, as some students may prefer to read or engage in other quiet activities during recess.\n\n(b) A heated argument between two boys during a one-on-one basketball game is a normal part of play and does not necessarily require reporting to the principal.\n\n(d) Three boys playing a handheld video game on school grounds may be a violation of the school's rules, but it is not necessarily a bullying incident that requires reporting to the principal.",
+        "metrics": {
+          "input_tokens": 167,
+          "output_tokens": 251,
+          "total_tokens_processed": 418,
+          "total_time_s": 8.687787532806396,
+          "avg_token_time_s": 0.03437158406018261,
+          "tokens_per_second": 28.891130112492522,
+          "avg_kv_cache_size_mb": 146.0,
+          "avg_kept_ratio": 1.0,
+          "current_memory_mb": 4184.9619140625,
+          "peak_memory_mb": 4252.421875,
+          "raw_metrics_summary": {
+            "num_steps": 251,
+            "min_kv_cache_mb": 83.5,
+            "max_kv_cache_mb": 208.5,
+            "min_kept_ratio": 0.40047961630695444,
+            "max_kept_ratio": 1.0
+          }
+        }
+      }
+    ],
+    "aggregated_metrics": {
+      "avg_total_time_per_prompt_s": 5.175585627555847,
+      "avg_peak_memory_per_prompt_mb": 4197.22802734375,
+      "avg_token_time_s": 0.034390595755174974,
+      "avg_kv_cache_size_mb": 86.125,
+      "avg_kept_ratio": 1.0,
+      "overall_tokens_per_second": 28.885620055058556,
+      "success_rate": 1.0,
+      "avg_output_tokens": 149.5
+    }
+  },
+  {
+    "strategy": "block_avg_size_4",
+    "responses": [
+      {
+        "question_id": 145,
+        "category": "stem",
+        "prompt": "<s>[INST] Describe the process and write out the balanced chemical equation for the reaction that occurs when solid calcium carbonate reacts with hydrochloric acid to form aqueous calcium chloride, carbon dioxide, and water. What type of reaction is this, and what observations might indicate that the reaction is taking place? [/INST]",
+        "response": "INSTO-\u040b everybody!\n\n\ufffd\ufffd!\ufffd\ufffd\u0409\u0409\u0409\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n nobody knows what\n\nthe.\n\n\n.\nThe first thing\n\u040b everybody\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\n\n\n\n\n\n\n\n\n\n\n everybody is welcome\n\n Einzeln.\n\n\n\nThe.\n\n.\n\n\n\n\n\n \u0444\u0435\u0432\u0440\u0430\u043b\u044c\n\n 201   \\\\\n Hinweis: Die\n\n Hinweis: Bitte beach\n\n\u040b nobody nobody nobody nobody nobody nobodyO\n\n\n\n\n\n\n\n\n\n\n\n\n nobody knows what\n\nhow to make ahowhowhow\n\n\nThe following\n\n\nPAGPA\n\nPAGPAGPAPAPAOOOOOOOOOOOOOOO nobody likes\n\n\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014PAGEO-PA-OOOOOOOOOOOOOOO nobody likes aO\n\n\nN\n\nO\n\n\nO\n\n\n\n\n\n\n\n everybody knows that\n\n everybody has a right-every-OOO\\\\\\\\\\\\OOOOOOOOOOOO everybody! \ufffd\ufffd...OOOOOOOOOOOOO\n\n\nOur team\n\n\nThe first\n\n\n\u0000\n\n\n\n\n nobody knows nobody knows\n\n\n\n is the 0OOOOOOOOOOOOOO nobody knows what\n\nthe truth about thethethethe\\\\\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n nobody knows what\n\nthe.\n\n\n.\nThe first thing\n\u040b everybody\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\n\n\n\n\n\n\n\n\n\n\n everybody is welcome\n\n Einzeln.\n\n\n\nThe.\n\n.\n\n\n\n\n\n \u0444\u0435\u0432\u0440\u0430\u043b\u044c\n\n 201   \\\\\n Hinweis: Die\n\n Hinweis: Bitte beach\n\n\u040b nobody nobody nobody nobody nobody nobodyO\n\n\n\n\n\n\n\n\n\n\n\n\n nobody knows what\n\nhow to make ahowhowhow\n\n\nThe following\n\n\nPAGPA\n\nPAGPAGPAPAPAOOOOOOOOOOOOOOO nobody likes\n\n\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014PAGEO-PA-OOOOOOOOOOOOOOO nobody likes aO\n\n\nN\n\nO\n\n\nO\n\n\n\n\n\n\n\n everybody knows that\n\n everybody has a right-every-OOO\\\\\\\\\\\\OOOOOOOOOOOO everybody! \ufffd\ufffd...OOOOOOOOOOOOO\n\n\nOur team\n\n\nThe first\n\n\n\u0000\n\n\n\n\n nobody knows nobody knows\n\n\n\n is the 0OOOOOOOOOOOOOO nobody knows what\n\nthe truth about thethethethe\\\\\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n nobody knows what\n\nthe.\n\n\n.\nThe first thing\n\u040b everybody\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\n\n\n\n\n\n\n\n\n\n\n everybody is welcome\n\n Einzeln.\n\n\n\nThe.\n\n.\n\n\n\n\n\n \u0444\u0435\u0432\u0440\u0430\u043b\u044c\n\n 201   \\\\\n Hinweis: Die\n\n Hinweis: Bitte beach\n\n\u040b nobody nobody nobody nobody nobody nobodyO\n\n\n\n\n\n\n\n\n\n\n\n\n nobody knows what\n\nhow to make ahowhowhow\n\n\nThe following\n\n\nPAGPA\n\nPAGPAGPAPAPAOOOOOOOOOOOOOOO nobody likes\n\n\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014PAGEO-PA-OOOOOOOOOOOOOOO nobody likes aO\n\n\nN\n\nO\n\n\nO\n\n\n\n\n\n\n\n everybody knows that\n\n everybody has a right-every-OOO\\\\\\\\\\\\OOOOOOOOOOOO everybody! \ufffd\ufffd...OOOOOOOOOOOOO\n\n\nOur team\n\n\nThe first\n\n\n\u0000\n\n\n\n\n nobody knows nobody knows\n\n\n\n is the 0OOOOOOOOOOOOOO nobody knows what\n\nthe truth",
+        "metrics": {
+          "input_tokens": 78,
+          "output_tokens": 1024,
+          "total_tokens_processed": 1102,
+          "total_time_s": 36.44144368171692,
+          "avg_token_time_s": 0.034161724615842104,
+          "tokens_per_second": 28.099874663136692,
+          "avg_kv_cache_size_mb": 1.50927734375,
+          "avg_kept_ratio": 0.7378849367390785,
+          "current_memory_mb": 4118.8310546875,
+          "peak_memory_mb": 4141.73486328125,
+          "raw_metrics_summary": {
+            "num_steps": 1024,
+            "min_kv_cache_mb": 1.0,
+            "max_kv_cache_mb": 10.0,
+            "min_kept_ratio": 0.02564102564102564,
+            "max_kept_ratio": 0.2564102564102564
+          }
+        }
+      },
+      {
+        "question_id": 158,
+        "category": "humanities",
+        "prompt": "<s>[INST] Which methods did Socrates employ to challenge the prevailing thoughts of his time? [/INST]",
+        "response": "INST-s-\u0409.\n\nThe `\n\n\nPAGPA\n\nPAGPAGPAPAPAPAPAPAOOOOOOOOOOOO everybody! \ufffdO\n\n Hinweis:OOO\\\\\\\\\\\\OOOOOOOOOOOO everybody! \ufffd\ufffd...OOOOOOOOOOOOO\n\n\nOur team\n\n\nThe first\n\n\n\u0000\n\n\n\n\n nobody knows nobody knows\n\n\n\n is the 0OOOOOOOOOOOOOO nobody knows what\n\nthe truth about thethethethe\\\\\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n nobody knows what\n\nthe.\n\n\n.\nThe first thing\n\u040b everybody\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\n\n\n\n\n\n\n\n\n\n\n everybody is welcome\n\n Einzeln.\n\n\n\nThe.\n\n.\n\n\n\n\n\n \u0444\u0435\u0432\u0440\u0430\u043b\u044c\n\n 201   \\\\\n Hinweis: Die\n\n Hinweis: Bitte beach\n\n\u040b nobody nobody nobody nobody nobody nobodyO\n\n\n\n\n\n\n\n\n\n\n\n\n nobody knows what\n\nhow to make ahowhowhow\n\n\nThe following\n\n\nPAGPA\n\nPAGPAGPAPAPAOOOOOOOOOOOOOOO nobody likes\n\n\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014PAGEO-PA-OOOOOOOOOOOOOOO nobody likes aO\n\n\nN\n\nO\n\n\nO\n\n\n\n\n\n\n\n everybody knows that\n\n everybody has a right-every-OOO\\\\\\\\\\\\OOOOOOOOOOOO everybody! \ufffd\ufffd...OOOOOOOOOOOOO\n\n\nOur team\n\n\nThe first\n\n\n\u0000\n\n\n\n\n nobody knows nobody knows\n\n\n\n is the 0OOOOOOOOOOOOOO nobody knows what\n\nthe truth about thethethethe\\\\\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n nobody knows what\n\nthe.\n\n\n.\nThe first thing\n\u040b everybody\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\n\n\n\n\n\n\n\n\n\n\n everybody is welcome\n\n Einzeln.\n\n\n\nThe.\n\n.\n\n\n\n\n\n \u0444\u0435\u0432\u0440\u0430\u043b\u044c\n\n 201   \\\\\n Hinweis: Die\n\n Hinweis: Bitte beach\n\n\u040b nobody nobody nobody nobody nobody nobodyO\n\n\n\n\n\n\n\n\n\n\n\n\n nobody knows what\n\nhow to make ahowhowhow\n\n\nThe following\n\n\nPAGPA\n\nPAGPAGPAPAPAOOOOOOOOOOOOOOO nobody likes\n\n\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014PAGEO-PA-OOOOOOOOOOOOOOO nobody likes aO\n\n\nN\n\nO\n\n\nO\n\n\n\n\n\n\n\n everybody knows that\n\n everybody has a right-every-OOO\\\\\\\\\\\\OOOOOOOOOOOO everybody! \ufffd\ufffd...OOOOOOOOOOOOO\n\n\nOur team\n\n\nThe first\n\n\n\u0000\n\n\n\n\n nobody knows nobody knows\n\n\n\n is the 0OOOOOOOOOOOOOO nobody knows what\n\nthe truth about thethethethe\\\\\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n nobody knows what\n\nthe.\n\n\n.\nThe first thing\n\u040b everybody\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\n\n\n\n\n\n\n\n\n\n\n everybody is welcome\n\n Einzeln.\n\n\n\nThe.\n\n.\n\n\n\n\n\n \u0444\u0435\u0432\u0440\u0430\u043b\u044c\n\n 201   \\\\\n Hinweis: Die\n\n Hinweis: Bitte beach\n\n\u040b nobody nobody nobody nobody nobody nobodyO\n\n\n\n\n\n\n\n\n\n\n\n\n nobody knows what\n\nhow to make ahowhowhow\n\n\nThe following\n\n\nPAGPA\n\nPAGPAGPAPAPAOOOOOOOOOOOOOOO nobody likes\n\n\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014PAGEO-PA-OOOOOOOO",
+        "metrics": {
+          "input_tokens": 27,
+          "output_tokens": 1024,
+          "total_tokens_processed": 1051,
+          "total_time_s": 36.3412401676178,
+          "avg_token_time_s": 0.034097441006451845,
+          "tokens_per_second": 28.177354302631773,
+          "avg_kv_cache_size_mb": 1.501953125,
+          "avg_kept_ratio": 0.7462396894711305,
+          "current_memory_mb": 4118.9853515625,
+          "peak_memory_mb": 4126.94140625,
+          "raw_metrics_summary": {
+            "num_steps": 1024,
+            "min_kv_cache_mb": 1.0,
+            "max_kv_cache_mb": 3.5,
+            "min_kept_ratio": 0.07407407407407407,
+            "max_kept_ratio": 0.25925925925925924
+          }
+        }
+      }
+    ],
+    "aggregated_metrics": {
+      "avg_total_time_per_prompt_s": 36.39134192466736,
+      "avg_peak_memory_per_prompt_mb": 4134.338134765625,
+      "avg_token_time_s": 0.034129582811146975,
+      "avg_kv_cache_size_mb": 1.505615234375,
+      "avg_kept_ratio": 0.7420623131051045,
+      "overall_tokens_per_second": 28.13856114786182,
+      "success_rate": 1.0,
+      "avg_output_tokens": 1024.0
+    }
+  },
+  {
+    "strategy": "block_avg_size_8",
+    "responses": [
+      {
+        "question_id": 84,
+        "category": "writing",
+        "prompt": "<s>[INST] Write a persuasive email to convince your introverted friend, who dislikes public speaking, to volunteer as a guest speaker at a local event. Use compelling arguments and address potential objections. Please be concise. [/INST]",
+        "response": "\u0409ev, 100       \ufffd everybody everybody everybody everybody everybody everybody\n\n\n",
+        "metrics": {
+          "input_tokens": 58,
+          "output_tokens": 27,
+          "total_tokens_processed": 85,
+          "total_time_s": 0.9608163833618164,
+          "avg_token_time_s": 0.03442266252305773,
+          "tokens_per_second": 28.10110284082506,
+          "avg_kv_cache_size_mb": 2.462962962962963,
+          "avg_kept_ratio": 0.6303317535545023,
+          "current_memory_mb": 4119.283203125,
+          "peak_memory_mb": 4134.52880859375,
+          "raw_metrics_summary": {
+            "num_steps": 27,
+            "min_kv_cache_mb": 1.0,
+            "max_kv_cache_mb": 4.0,
+            "min_kept_ratio": 0.034482758620689655,
+            "max_kept_ratio": 0.13793103448275862
+          }
+        }
+      },
+      {
+        "question_id": 152,
+        "category": "humanities",
+        "prompt": "<s>[INST] How do the stages of life shape our understanding of time and mortality? [/INST]",
+        "response": "------\n\n\n\n\n\n\n\n\n\n\n\n\n\n Hinweis: Please note that the `COOOOOO\u0409\u0409\u0409\u0409\u0409\u0409\u0409OOOOOOOOOOOOOOOOOOOOOOOO everybody! \ufffd................O!O!O!\u0409\u0409\u0409\u0409\u0409\u0409\u0409OOOOOOOOOOOOOOOOOOOOOOOO everybody! \ufffd................O-O-O--\u0409\u0409\u0409\u0409\u0409.\n\nThe first letter of each of of of ofOOOOOOOOO\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n everybody knows that the best way to to \n\n nobody nobody nobody\n\n\n",
+        "metrics": {
+          "input_tokens": 24,
+          "output_tokens": 179,
+          "total_tokens_processed": 203,
+          "total_time_s": 6.249361038208008,
+          "avg_token_time_s": 0.034159484522302726,
+          "tokens_per_second": 28.642928277884856,
+          "avg_kv_cache_size_mb": 2.494413407821229,
+          "avg_kept_ratio": 0.820018365472911,
+          "current_memory_mb": 4119.28515625,
+          "peak_memory_mb": 4125.22265625,
+          "raw_metrics_summary": {
+            "num_steps": 179,
+            "min_kv_cache_mb": 1.0,
+            "max_kv_cache_mb": 4.0,
+            "min_kept_ratio": 0.08333333333333333,
+            "max_kept_ratio": 0.3333333333333333
+          }
+        }
+      }
+    ],
+    "aggregated_metrics": {
+      "avg_total_time_per_prompt_s": 3.605088710784912,
+      "avg_peak_memory_per_prompt_mb": 4129.875732421875,
+      "avg_token_time_s": 0.034291073522680224,
+      "avg_kv_cache_size_mb": 2.478688185392096,
+      "avg_kept_ratio": 0.7251750595137066,
+      "overall_tokens_per_second": 28.57072551137708,
+      "success_rate": 1.0,
+      "avg_output_tokens": 103.0
+    }
+  }
+]

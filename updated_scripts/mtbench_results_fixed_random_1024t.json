@@ -1,0 +1,67 @@
+[
+  {
+    "strategy": "random_1024t",
+    "responses": [
+      {
+        "question_id": 135,
+        "category": "extraction",
+        "prompt": "<s>[INST] Identify the countries, their capitals, and the languages spoken in the following sentences. Output in JSON format.\na) Amidst the idyllic vistas, Copenhagen, Denmark's capital, captivates visitors with its thriving art scene and the enchanting Danish language spoken by its inhabitants.\nb) Within the enchanting realm of Eldoria, one discovers Avalore, a grandiose city that emanates an ethereal aura. Lumina, a melodious language, serves as the principal mode of communication within this mystical abode.\nc) Nestled amidst a harmonious blend of age-old customs and contemporary wonders, Buenos Aires, the capital of Argentina, stands as a bustling metropolis. It is a vibrant hub where the expressive Spanish language holds sway over the city's inhabitants. [/INST]",
+        "response": " Sure! Here are the countries, capitals, and languages mentioned in the sentences:\n\n{\n\"a\": {\n\"country\": \"Denmark\",\n\"capital\": \"Copenhagen\",\n\"language\": \"Danish\"\n},\n\"b\": {\n\"country\": \"Eldoria\",\n\"capital\": \"Avalore\",\n\"language\": \"Lumina\"\n},\n\"c\": {\n\"country\": \"Argentina\",\n\"capital\": \"Buenos Aires\",\n\"language\": \"Spanish\"\n}\n}\n\nI hope this helps! Let me know if you have any other questions.",
+        "metrics": {
+          "input_tokens": 206,
+          "output_tokens": 144,
+          "total_tokens_processed": 350,
+          "total_time_s": 4.985804319381714,
+          "avg_token_time_s": 0.03438339796331194,
+          "tokens_per_second": 28.881999929322806,
+          "avg_kv_cache_size_mb": 138.75,
+          "avg_kept_ratio": 1.0,
+          "current_memory_mb": 4175.7353515625,
+          "peak_memory_mb": 4232.1953125,
+          "raw_metrics_summary": {
+            "num_steps": 144,
+            "min_kv_cache_mb": 103.0,
+            "max_kv_cache_mb": 174.5,
+            "min_kept_ratio": 0.5902578796561605,
+            "max_kept_ratio": 1.0
+          }
+        }
+      },
+      {
+        "question_id": 85,
+        "category": "writing",
+        "prompt": "<s>[INST] Describe a vivid and unique character, using strong imagery and creative language. Please answer in fewer than two paragraphs. [/INST]",
+        "response": " Certainly! Here is a vivid and unique character description:\n\nMeet Zara, a woman with a fiery spirit and a heart of gold. Her long, wild hair resembles a fierce storm, with hues of red and orange that seem to dance in the light. Her eyes are pools of sapphire, filled with a deep wisdom and a mischievous twinkle that can only be found in those who have lived a thousand lives. Her skin is a warm, golden brown, like the sun-kissed sands of a desert oasis, and her smile can light up a room like a ray of sunshine. She moves with a fluid grace, like a cat stalking its prey, and her laughter is a melodious song that can charm the birds from the trees.\n\nZara is a free spirit, a wanderer who has roamed the world and experienced its many wonders. She has climbed mountains and crossed deserts, and has seen the sun rise over the great pyramids. She is a storyteller, weaving tales of adventure and magic that leave her listeners spellbound. And yet, despite her many adventures, she remains humble and kind, always willing to lend a helping hand or offer a listening ear. Zara is a true original, a one-of-a-kind gem that shines brightly in a world of ordinary souls.",
+        "metrics": {
+          "input_tokens": 36,
+          "output_tokens": 309,
+          "total_tokens_processed": 345,
+          "total_time_s": 10.711767196655273,
+          "avg_token_time_s": 0.03442442841514415,
+          "tokens_per_second": 28.846780771755814,
+          "avg_kv_cache_size_mb": 95.0,
+          "avg_kept_ratio": 1.0,
+          "current_memory_mb": 4172.099609375,
+          "peak_memory_mb": 4225.7861328125,
+          "raw_metrics_summary": {
+            "num_steps": 309,
+            "min_kv_cache_mb": 18.0,
+            "max_kv_cache_mb": 172.0,
+            "min_kept_ratio": 0.10465116279069768,
+            "max_kept_ratio": 1.0
+          }
+        }
+      }
+    ],
+    "aggregated_metrics": {
+      "avg_total_time_per_prompt_s": 7.848785758018494,
+      "avg_peak_memory_per_prompt_mb": 4228.99072265625,
+      "avg_token_time_s": 0.034403913189228044,
+      "avg_kv_cache_size_mb": 116.875,
+      "avg_kept_ratio": 1.0,
+      "overall_tokens_per_second": 28.857966949677863,
+      "success_rate": 1.0,
+      "avg_output_tokens": 226.5
+    }
+  }
+]

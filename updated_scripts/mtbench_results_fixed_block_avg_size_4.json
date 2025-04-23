@@ -1,0 +1,67 @@
+[
+  {
+    "strategy": "block_avg_size_4",
+    "responses": [
+      {
+        "question_id": 145,
+        "category": "stem",
+        "prompt": "<s>[INST] Describe the process and write out the balanced chemical equation for the reaction that occurs when solid calcium carbonate reacts with hydrochloric acid to form aqueous calcium chloride, carbon dioxide, and water. What type of reaction is this, and what observations might indicate that the reaction is taking place? [/INST]",
+        "response": "INSTO-\u040b everybody!\n\n\ufffd\ufffd!\ufffd\ufffd\u0409\u0409\u0409\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n nobody knows what\n\nthe.\n\n\n.\nThe first thing\n\u040b everybody\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\n\n\n\n\n\n\n\n\n\n\n everybody is welcome\n\n Einzeln.\n\n\n\nThe.\n\n.\n\n\n\n\n\n \u0444\u0435\u0432\u0440\u0430\u043b\u044c\n\n 201   \\\\\n Hinweis: Die\n\n Hinweis: Bitte beach\n\n\u040b nobody nobody nobody nobody nobody nobodyO\n\n\n\n\n\n\n\n\n\n\n\n\n nobody knows what\n\nhow to make ahowhowhow\n\n\nThe following\n\n\nPAGPA\n\nPAGPAGPAPAPAOOOOOOOOOOOOOOO nobody likes\n\n\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014PAGEO-PA-OOOOOOOOOOOOOOO nobody likes aO\n\n\nN\n\nO\n\n\nO\n\n\n\n\n\n\n\n everybody knows that\n\n everybody has a right-every-OOO\\\\\\\\\\\\OOOOOOOOOOOO everybody! \ufffd\ufffd...OOOOOOOOOOOOO\n\n\nOur team\n\n\nThe first\n\n\n\u0000\n\n\n\n\n nobody knows nobody knows\n\n\n\n is the 0OOOOOOOOOOOOOO nobody knows what\n\nthe truth about thethethethe\\\\\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n nobody knows what\n\nthe.\n\n\n.\nThe first thing\n\u040b everybody\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\n\n\n\n\n\n\n\n\n\n\n everybody is welcome\n\n Einzeln.\n\n\n\nThe.\n\n.\n\n\n\n\n\n \u0444\u0435\u0432\u0440\u0430\u043b\u044c\n\n 201   \\\\\n Hinweis: Die\n\n Hinweis: Bitte beach\n\n\u040b nobody nobody nobody nobody nobody nobodyO\n\n\n\n\n\n\n\n\n\n\n\n\n nobody knows what\n\nhow to make ahowhowhow\n\n\nThe following\n\n\nPAGPA\n\nPAGPAGPAPAPAOOOOOOOOOOOOOOO nobody likes\n\n\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014PAGEO-PA-OOOOOOOOOOOOOOO nobody likes aO\n\n\nN\n\nO\n\n\nO\n\n\n\n\n\n\n\n everybody knows that\n\n everybody has a right-every-OOO\\\\\\\\\\\\OOOOOOOOOOOO everybody! \ufffd\ufffd...OOOOOOOOOOOOO\n\n\nOur team\n\n\nThe first\n\n\n\u0000\n\n\n\n\n nobody knows nobody knows\n\n\n\n is the 0OOOOOOOOOOOOOO nobody knows what\n\nthe truth about thethethethe\\\\\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n nobody knows what\n\nthe.\n\n\n.\nThe first thing\n\u040b everybody\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\n\n\n\n\n\n\n\n\n\n\n everybody is welcome\n\n Einzeln.\n\n\n\nThe.\n\n.\n\n\n\n\n\n \u0444\u0435\u0432\u0440\u0430\u043b\u044c\n\n 201   \\\\\n Hinweis: Die\n\n Hinweis: Bitte beach\n\n\u040b nobody nobody nobody nobody nobody nobodyO\n\n\n\n\n\n\n\n\n\n\n\n\n nobody knows what\n\nhow to make ahowhowhow\n\n\nThe following\n\n\nPAGPA\n\nPAGPAGPAPAPAOOOOOOOOOOOOOOO nobody likes\n\n\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014PAGEO-PA-OOOOOOOOOOOOOOO nobody likes aO\n\n\nN\n\nO\n\n\nO\n\n\n\n\n\n\n\n everybody knows that\n\n everybody has a right-every-OOO\\\\\\\\\\\\OOOOOOOOOOOO everybody! \ufffd\ufffd...OOOOOOOOOOOOO\n\n\nOur team\n\n\nThe first\n\n\n\u0000\n\n\n\n\n nobody knows nobody knows\n\n\n\n is the 0OOOOOOOOOOOOOO nobody knows what\n\nthe truth",
+        "metrics": {
+          "input_tokens": 78,
+          "output_tokens": 1024,
+          "total_tokens_processed": 1102,
+          "total_time_s": 36.44144368171692,
+          "avg_token_time_s": 0.034161724615842104,
+          "tokens_per_second": 28.099874663136692,
+          "avg_kv_cache_size_mb": 1.50927734375,
+          "avg_kept_ratio": 0.7378849367390785,
+          "current_memory_mb": 4118.8310546875,
+          "peak_memory_mb": 4141.73486328125,
+          "raw_metrics_summary": {
+            "num_steps": 1024,
+            "min_kv_cache_mb": 1.0,
+            "max_kv_cache_mb": 10.0,
+            "min_kept_ratio": 0.02564102564102564,
+            "max_kept_ratio": 0.2564102564102564
+          }
+        }
+      },
+      {
+        "question_id": 158,
+        "category": "humanities",
+        "prompt": "<s>[INST] Which methods did Socrates employ to challenge the prevailing thoughts of his time? [/INST]",
+        "response": "INST-s-\u0409.\n\nThe `\n\n\nPAGPA\n\nPAGPAGPAPAPAPAPAPAOOOOOOOOOOOO everybody! \ufffdO\n\n Hinweis:OOO\\\\\\\\\\\\OOOOOOOOOOOO everybody! \ufffd\ufffd...OOOOOOOOOOOOO\n\n\nOur team\n\n\nThe first\n\n\n\u0000\n\n\n\n\n nobody knows nobody knows\n\n\n\n is the 0OOOOOOOOOOOOOO nobody knows what\n\nthe truth about thethethethe\\\\\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n nobody knows what\n\nthe.\n\n\n.\nThe first thing\n\u040b everybody\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\n\n\n\n\n\n\n\n\n\n\n everybody is welcome\n\n Einzeln.\n\n\n\nThe.\n\n.\n\n\n\n\n\n \u0444\u0435\u0432\u0440\u0430\u043b\u044c\n\n 201   \\\\\n Hinweis: Die\n\n Hinweis: Bitte beach\n\n\u040b nobody nobody nobody nobody nobody nobodyO\n\n\n\n\n\n\n\n\n\n\n\n\n nobody knows what\n\nhow to make ahowhowhow\n\n\nThe following\n\n\nPAGPA\n\nPAGPAGPAPAPAOOOOOOOOOOOOOOO nobody likes\n\n\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014PAGEO-PA-OOOOOOOOOOOOOOO nobody likes aO\n\n\nN\n\nO\n\n\nO\n\n\n\n\n\n\n\n everybody knows that\n\n everybody has a right-every-OOO\\\\\\\\\\\\OOOOOOOOOOOO everybody! \ufffd\ufffd...OOOOOOOOOOOOO\n\n\nOur team\n\n\nThe first\n\n\n\u0000\n\n\n\n\n nobody knows nobody knows\n\n\n\n is the 0OOOOOOOOOOOOOO nobody knows what\n\nthe truth about thethethethe\\\\\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n nobody knows what\n\nthe.\n\n\n.\nThe first thing\n\u040b everybody\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\n\n\n\n\n\n\n\n\n\n\n everybody is welcome\n\n Einzeln.\n\n\n\nThe.\n\n.\n\n\n\n\n\n \u0444\u0435\u0432\u0440\u0430\u043b\u044c\n\n 201   \\\\\n Hinweis: Die\n\n Hinweis: Bitte beach\n\n\u040b nobody nobody nobody nobody nobody nobodyO\n\n\n\n\n\n\n\n\n\n\n\n\n nobody knows what\n\nhow to make ahowhowhow\n\n\nThe following\n\n\nPAGPA\n\nPAGPAGPAPAPAOOOOOOOOOOOOOOO nobody likes\n\n\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014PAGEO-PA-OOOOOOOOOOOOOOO nobody likes aO\n\n\nN\n\nO\n\n\nO\n\n\n\n\n\n\n\n everybody knows that\n\n everybody has a right-every-OOO\\\\\\\\\\\\OOOOOOOOOOOO everybody! \ufffd\ufffd...OOOOOOOOOOOOO\n\n\nOur team\n\n\nThe first\n\n\n\u0000\n\n\n\n\n nobody knows nobody knows\n\n\n\n is the 0OOOOOOOOOOOOOO nobody knows what\n\nthe truth about thethethethe\\\\\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n nobody knows what\n\nthe.\n\n\n.\nThe first thing\n\u040b everybody\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\n\n\n\n\n\n\n\n\n\n\n everybody is welcome\n\n Einzeln.\n\n\n\nThe.\n\n.\n\n\n\n\n\n \u0444\u0435\u0432\u0440\u0430\u043b\u044c\n\n 201   \\\\\n Hinweis: Die\n\n Hinweis: Bitte beach\n\n\u040b nobody nobody nobody nobody nobody nobodyO\n\n\n\n\n\n\n\n\n\n\n\n\n nobody knows what\n\nhow to make ahowhowhow\n\n\nThe following\n\n\nPAGPA\n\nPAGPAGPAPAPAOOOOOOOOOOOOOOO nobody likes\n\n\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014PAGEO-PA-OOOOOOOO",
+        "metrics": {
+          "input_tokens": 27,
+          "output_tokens": 1024,
+          "total_tokens_processed": 1051,
+          "total_time_s": 36.3412401676178,
+          "avg_token_time_s": 0.034097441006451845,
+          "tokens_per_second": 28.177354302631773,
+          "avg_kv_cache_size_mb": 1.501953125,
+          "avg_kept_ratio": 0.7462396894711305,
+          "current_memory_mb": 4118.9853515625,
+          "peak_memory_mb": 4126.94140625,
+          "raw_metrics_summary": {
+            "num_steps": 1024,
+            "min_kv_cache_mb": 1.0,
+            "max_kv_cache_mb": 3.5,
+            "min_kept_ratio": 0.07407407407407407,
+            "max_kept_ratio": 0.25925925925925924
+          }
+        }
+      }
+    ],
+    "aggregated_metrics": {
+      "avg_total_time_per_prompt_s": 36.39134192466736,
+      "avg_peak_memory_per_prompt_mb": 4134.338134765625,
+      "avg_token_time_s": 0.034129582811146975,
+      "avg_kv_cache_size_mb": 1.505615234375,
+      "avg_kept_ratio": 0.7420623131051045,
+      "overall_tokens_per_second": 28.13856114786182,
+      "success_rate": 1.0,
+      "avg_output_tokens": 1024.0
+    }
+  }
+]
