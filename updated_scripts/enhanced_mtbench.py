@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
-fixed_mtbench_eval.py
+
 
 Fixed version of the MT-Bench KV cache evaluation script with additional
 debugging, error handling, and fixes for multi-GPU setups.
