@@ -1,0 +1,382 @@
+{
+  "Baseline": {
+    "overall": {
+      "space_avg": 209.6,
+      "space_peak": 397.1,
+      "time_total": 31.85363621711731,
+      "time_per_token": 0.042414961673924514,
+      "time_first_token": 0.19633879661560058,
+      "accuracy": 3.4
+    },
+    "by_category": {
+      "coding": {
+        "space_avg": 0.0,
+        "space_peak": 0.0,
+        "time_total": 0.0,
+        "time_per_token": 0.0,
+        "time_first_token": 0.0,
+        "accuracy": 0.0
+      },
+      "extraction": {
+        "space_avg": 0.0,
+        "space_peak": 0.0,
+        "time_total": 0.0,
+        "time_per_token": 0.0,
+        "time_first_token": 0.0,
+        "accuracy": 0.0
+      },
+      "humanities": {
+        "space_avg": 0.0,
+        "space_peak": 0.0,
+        "time_total": 0.0,
+        "time_per_token": 0.0,
+        "time_first_token": 0.0,
+        "accuracy": 0.0
+      },
+      "math": {
+        "space_avg": 0.0,
+        "space_peak": 0.0,
+        "time_total": 0.0,
+        "time_per_token": 0.0,
+        "time_first_token": 0.0,
+        "accuracy": 0.0
+      },
+      "reasoning": {
+        "space_avg": 0.0,
+        "space_peak": 0.0,
+        "time_total": 0.0,
+        "time_per_token": 0.0,
+        "time_first_token": 0.0,
+        "accuracy": 0.0
+      },
+      "roleplay": {
+        "space_avg": 0.0,
+        "space_peak": 0.0,
+        "time_total": 0.0,
+        "time_per_token": 0.0,
+        "time_first_token": 0.0,
+        "accuracy": 0.0
+      },
+      "stem": {
+        "space_avg": 0.0,
+        "space_peak": 0.0,
+        "time_total": 0.0,
+        "time_per_token": 0.0,
+        "time_first_token": 0.0,
+        "accuracy": 0.0
+      },
+      "writing": {
+        "space_avg": 209.6,
+        "space_peak": 397.1,
+        "time_total": 31.85363621711731,
+        "time_per_token": 0.042414961673924514,
+        "time_first_token": 0.19633879661560058,
+        "accuracy": 3.4
+      }
+    }
+  },
+  "BottomAttention(10)": {
+    "overall": {
+      "space_avg": 209.6,
+      "space_peak": 397.1,
+      "time_total": 30.31432795524597,
+      "time_per_token": 0.04036528356224497,
+      "time_first_token": 0.04105396270751953,
+      "accuracy": 3.6
+    },
+    "by_category": {
+      "coding": {
+        "space_avg": 0.0,
+        "space_peak": 0.0,
+        "time_total": 0.0,
+        "time_per_token": 0.0,
+        "time_first_token": 0.0,
+        "accuracy": 0.0
+      },
+      "extraction": {
+        "space_avg": 0.0,
+        "space_peak": 0.0,
+        "time_total": 0.0,
+        "time_per_token": 0.0,
+        "time_first_token": 0.0,
+        "accuracy": 0.0
+      },
+      "humanities": {
+        "space_avg": 0.0,
+        "space_peak": 0.0,
+        "time_total": 0.0,
+        "time_per_token": 0.0,
+        "time_first_token": 0.0,
+        "accuracy": 0.0
+      },
+      "math": {
+        "space_avg": 0.0,
+        "space_peak": 0.0,
+        "time_total": 0.0,
+        "time_per_token": 0.0,
+        "time_first_token": 0.0,
+        "accuracy": 0.0
+      },
+      "reasoning": {
+        "space_avg": 0.0,
+        "space_peak": 0.0,
+        "time_total": 0.0,
+        "time_per_token": 0.0,
+        "time_first_token": 0.0,
+        "accuracy": 0.0
+      },
+      "roleplay": {
+        "space_avg": 0.0,
+        "space_peak": 0.0,
+        "time_total": 0.0,
+        "time_per_token": 0.0,
+        "time_first_token": 0.0,
+        "accuracy": 0.0
+      },
+      "stem": {
+        "space_avg": 0.0,
+        "space_peak": 0.0,
+        "time_total": 0.0,
+        "time_per_token": 0.0,
+        "time_first_token": 0.0,
+        "accuracy": 0.0
+      },
+      "writing": {
+        "space_avg": 209.6,
+        "space_peak": 397.1,
+        "time_total": 30.31432795524597,
+        "time_per_token": 0.04036528356224497,
+        "time_first_token": 0.04105396270751953,
+        "accuracy": 3.6
+      }
+    }
+  },
+  "HybridAttention(10,10)": {
+    "overall": {
+      "space_avg": 209.6,
+      "space_peak": 397.1,
+      "time_total": 30.07373399734497,
+      "time_per_token": 0.04004491877143138,
+      "time_first_token": 0.04048900604248047,
+      "accuracy": 3.6
+    },
+    "by_category": {
+      "coding": {
+        "space_avg": 0.0,
+        "space_peak": 0.0,
+        "time_total": 0.0,
+        "time_per_token": 0.0,
+        "time_first_token": 0.0,
+        "accuracy": 0.0
+      },
+      "extraction": {
+        "space_avg": 0.0,
+        "space_peak": 0.0,
+        "time_total": 0.0,
+        "time_per_token": 0.0,
+        "time_first_token": 0.0,
+        "accuracy": 0.0
+      },
+      "humanities": {
+        "space_avg": 0.0,
+        "space_peak": 0.0,
+        "time_total": 0.0,
+        "time_per_token": 0.0,
+        "time_first_token": 0.0,
+        "accuracy": 0.0
+      },
+      "math": {
+        "space_avg": 0.0,
+        "space_peak": 0.0,
+        "time_total": 0.0,
+        "time_per_token": 0.0,
+        "time_first_token": 0.0,
+        "accuracy": 0.0
+      },
+      "reasoning": {
+        "space_avg": 0.0,
+        "space_peak": 0.0,
+        "time_total": 0.0,
+        "time_per_token": 0.0,
+        "time_first_token": 0.0,
+        "accuracy": 0.0
+      },
+      "roleplay": {
+        "space_avg": 0.0,
+        "space_peak": 0.0,
+        "time_total": 0.0,
+        "time_per_token": 0.0,
+        "time_first_token": 0.0,
+        "accuracy": 0.0
+      },
+      "stem": {
+        "space_avg": 0.0,
+        "space_peak": 0.0,
+        "time_total": 0.0,
+        "time_per_token": 0.0,
+        "time_first_token": 0.0,
+        "accuracy": 0.0
+      },
+      "writing": {
+        "space_avg": 209.6,
+        "space_peak": 397.1,
+        "time_total": 30.07373399734497,
+        "time_per_token": 0.04004491877143138,
+        "time_first_token": 0.04048900604248047,
+        "accuracy": 3.6
+      }
+    }
+  },
+  "Random(10)": {
+    "overall": {
+      "space_avg": 209.6,
+      "space_peak": 397.1,
+      "time_total": 30.05869960784912,
+      "time_per_token": 0.04002489961098418,
+      "time_first_token": 0.04078865051269531,
+      "accuracy": 3.2
+    },
+    "by_category": {
+      "coding": {
+        "space_avg": 0.0,
+        "space_peak": 0.0,
+        "time_total": 0.0,
+        "time_per_token": 0.0,
+        "time_first_token": 0.0,
+        "accuracy": 0.0
+      },
+      "extraction": {
+        "space_avg": 0.0,
+        "space_peak": 0.0,
+        "time_total": 0.0,
+        "time_per_token": 0.0,
+        "time_first_token": 0.0,
+        "accuracy": 0.0
+      },
+      "humanities": {
+        "space_avg": 0.0,
+        "space_peak": 0.0,
+        "time_total": 0.0,
+        "time_per_token": 0.0,
+        "time_first_token": 0.0,
+        "accuracy": 0.0
+      },
+      "math": {
+        "space_avg": 0.0,
+        "space_peak": 0.0,
+        "time_total": 0.0,
+        "time_per_token": 0.0,
+        "time_first_token": 0.0,
+        "accuracy": 0.0
+      },
+      "reasoning": {
+        "space_avg": 0.0,
+        "space_peak": 0.0,
+        "time_total": 0.0,
+        "time_per_token": 0.0,
+        "time_first_token": 0.0,
+        "accuracy": 0.0
+      },
+      "roleplay": {
+        "space_avg": 0.0,
+        "space_peak": 0.0,
+        "time_total": 0.0,
+        "time_per_token": 0.0,
+        "time_first_token": 0.0,
+        "accuracy": 0.0
+      },
+      "stem": {
+        "space_avg": 0.0,
+        "space_peak": 0.0,
+        "time_total": 0.0,
+        "time_per_token": 0.0,
+        "time_first_token": 0.0,
+        "accuracy": 0.0
+      },
+      "writing": {
+        "space_avg": 209.6,
+        "space_peak": 397.1,
+        "time_total": 30.05869960784912,
+        "time_per_token": 0.04002489961098418,
+        "time_first_token": 0.04078865051269531,
+        "accuracy": 3.2
+      }
+    }
+  },
+  "TopAttention(10)": {
+    "overall": {
+      "space_avg": 209.6,
+      "space_peak": 397.1,
+      "time_total": 30.262902879714964,
+      "time_per_token": 0.04029680809549263,
+      "time_first_token": 0.04088869094848633,
+      "accuracy": 3.4
+    },
+    "by_category": {
+      "coding": {
+        "space_avg": 0.0,
+        "space_peak": 0.0,
+        "time_total": 0.0,
+        "time_per_token": 0.0,
+        "time_first_token": 0.0,
+        "accuracy": 0.0
+      },
+      "extraction": {
+        "space_avg": 0.0,
+        "space_peak": 0.0,
+        "time_total": 0.0,
+        "time_per_token": 0.0,
+        "time_first_token": 0.0,
+        "accuracy": 0.0
+      },
+      "humanities": {
+        "space_avg": 0.0,
+        "space_peak": 0.0,
+        "time_total": 0.0,
+        "time_per_token": 0.0,
+        "time_first_token": 0.0,
+        "accuracy": 0.0
+      },
+      "math": {
+        "space_avg": 0.0,
+        "space_peak": 0.0,
+        "time_total": 0.0,
+        "time_per_token": 0.0,
+        "time_first_token": 0.0,
+        "accuracy": 0.0
+      },
+      "reasoning": {
+        "space_avg": 0.0,
+        "space_peak": 0.0,
+        "time_total": 0.0,
+        "time_per_token": 0.0,
+        "time_first_token": 0.0,
+        "accuracy": 0.0
+      },
+      "roleplay": {
+        "space_avg": 0.0,
+        "space_peak": 0.0,
+        "time_total": 0.0,
+        "time_per_token": 0.0,
+        "time_first_token": 0.0,
+        "accuracy": 0.0
+      },
+      "stem": {
+        "space_avg": 0.0,
+        "space_peak": 0.0,
+        "time_total": 0.0,
+        "time_per_token": 0.0,
+        "time_first_token": 0.0,
+        "accuracy": 0.0
+      },
+      "writing": {
+        "space_avg": 209.6,
+        "space_peak": 397.1,
+        "time_total": 30.262902879714964,
+        "time_per_token": 0.04029680809549263,
+        "time_first_token": 0.04088869094848633,
+        "accuracy": 3.4
+      }
+    }
+  }
+}
