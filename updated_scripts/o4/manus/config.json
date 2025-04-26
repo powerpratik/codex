@@ -1,0 +1,26 @@
+{
+  "model_name": "meta-llama/Llama-2-7b-chat-hf",
+  "cache_dir": "/path/to/your/model/cache",
+  "output_dir": "benchmark_results",
+  "max_gen_tokens": 100,
+  "kv_threshold": 1000,
+  "strategies": [
+    "Baseline",
+    "Random(keep=0.7)",
+    "AttentionTop(keep=0.7)",
+    "AttentionBottom(keep=0.7)",
+    "HybridNPercent(keep=0.7,r=0.5,a=0.3,t=0.2)",
+    "SlidingWindow(window=0.7,important=0.1)",
+    "AdaptiveAttention(base_keep=0.7)"
+  ],
+  "dataset": {
+    "local_path": "/path/to/your/mtbench/dataset.json",
+    "prompt_field": "turns"
+  },
+  "azure": {
+    "api_key": "your_azure_api_key",
+    "endpoint": "your_azure_endpoint",
+    "api_version": "2023-05-15",
+    "deployment_name": "your_deployment_name"
+  }
+}
