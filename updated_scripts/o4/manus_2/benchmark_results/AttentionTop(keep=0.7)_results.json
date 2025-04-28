@@ -1,0 +1,7 @@
+[
+  {
+    "strategy": "AttentionTop(keep=0.7)",
+    "error": "evaluate_with_azure() got an unexpected keyword argument 'api_version'",
+    "traceback": "Traceback (most recent call last):\n  File \"/home/cc/llm_backup_chameleon_recent/codex/updated_scripts/o4/manus_2/robust_real_benchmark.py\", line 1308, in process_single_prompt\n    azure_score = evaluate_with_azure(\nTypeError: evaluate_with_azure() got an unexpected keyword argument 'api_version'\n"
+  }
+]

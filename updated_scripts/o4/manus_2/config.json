@@ -1,9 +1,9 @@
 {
   "model_name": "meta-llama/Llama-2-7b-chat-hf",
-  "cache_dir": "/path/to/your/model/cache",
+  "cache_dir": "/home/cc/ceph/raptor/hf-hub",
   "output_dir": "benchmark_results",
-  "max_gen_tokens": 100,
-  "kv_threshold": 20,
+  "max_gen_tokens": 800,
+  "kv_threshold": 250,
   "strategies": [
     "Baseline",
     "Random(keep=0.7)",
@@ -14,11 +14,14 @@
     "AdaptiveAttention(base_keep=0.7)"
   ],
   "dataset": {
-    "local_path": "/path/to/your/mtbench/dataset.json",
+    "local_path": "./mt_bench_data.jsonl",
     "prompt_field": "turns"
   },
+  
   "azure": {
-    "api_key": "",
-    "endpoint": ""
+    "api_key": "FK5g9oP1mT7KHBIoivtoMIyTooCCH3Q7n3irfuaeWvPSawxr3PCnJQQJ99BCACHYHv6XJ3w3AAAAACOGr0Xx",
+    "endpoint": "https://ai-wleonardtestp7127ai582819607599.openai.azure.com/",
+    "deployment":"gpt-4o"
   }
+  
 }
