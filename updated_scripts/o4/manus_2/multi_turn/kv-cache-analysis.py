@@ -628,6 +628,7 @@ def plot_tokens_per_position(strategies, raw_metrics):
     plt.legend()
     plt.grid(True, linestyle='--', alpha=0.7)
     plt.tight_layout()
+    plt.show()
     plt.savefig("token_generation_time.png", dpi=300)
     print("Token generation time plot saved to token_generation_time.png")
 
