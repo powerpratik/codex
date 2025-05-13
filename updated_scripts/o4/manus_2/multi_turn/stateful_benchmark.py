@@ -1220,7 +1220,7 @@ def process_multi_turn(model, tokenizer, data_item, strat_cfg, cache_manager,
              if current_question_accumulated_kv_cache is None:
                   logger.error(f"KV Cache lost. Stopping further processing for question {question_id} after error in turn {turn_idx+1}.")
                   break
-        if turn_idx == 9: # Turn 10 is when turn_idx (0-indexed) is 9
+        if turn_idx == 10: # Turn 10 is when turn_idx (0-indexed) is 9
             logger.info(f"DEBUG: Manually stopping processing for question {question_id} after Turn {turn_idx+1} as requested for debugging.")
             break # Exit the loop for the current question's turns
     
